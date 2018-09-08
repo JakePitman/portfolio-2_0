@@ -1,13 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
+import styled from 'styled-components'
+
+import TvBox from './components/TvBox';
+
+const Container = styled.div`
+  background: pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <h1>Portfolio 2.0</h1>
-        <h2>Hello world</h2>
-      </div>
+      <Container>
+        <TvBox />
+      </Container>
     );
   }
 }
