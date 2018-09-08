@@ -1,22 +1,29 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components'
 
+const Container = styled.div`
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+`
+
 const Frame = styled.div`
-  //background-color: transparent;
+  background-color: transparent;
   border-radius: 2rem;
-  border: 1rem solid;
-  box-shadow: inset 0 0 18rem black,
+  //border: 1rem solid;
+  box-shadow: inset 0 0 2vw black,
     inset 0 0 3rem black,
     0 0 10rem black;
-  width: 90%;
+  width: inherit;
   height: 300px;
-  position: absolute;
-  top: 2%;
-  left: 1%;
+  position: relative;
+  margin-top: 2rem;
+  //top: 2%;
+  //left: 3px;
 `
 
 const Output = styled.div`
-  position: absolute;
+  //position: absolute;
   background-color: rgba(35, 44, 77);
   width: 100%;
   height: 100%;
@@ -60,8 +67,10 @@ const scanlinesAnimation = keyframes`
 
 const Scanlines = styled.div`
   animation: ${scanlinesAnimation} 8s infinite;
-  width: 100%;
-  height: 100%;
+  //width: 100%;
+  //height: 100%;
+  width: inherit;
+  height: inherit;
   //background: repeating-linear-gradient(
             //0deg,
             //rgba(255,255,255,0.5),
@@ -69,8 +78,11 @@ const Scanlines = styled.div`
             //rgba(35,75,170,0.9) 2px,
             //rgba(0,0,0,0.2) 3px,
             //rgba(0,0,0,0.6) 4px);
+  border: 1rem solid;
   border-radius: 1rem;
   position: absolute;
+  left: -1rem;
+  top: -1rem;
 `
 
 const glowAnimation = keyframes`
@@ -90,9 +102,11 @@ const Glow = styled.div`
     rgba(200,200,255,0.27) 93%,
     rgba(100,100,155,0) 100%);
   opacity: 0.15;
-  //position: fixed
+  position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
 `
 
 const nameAnimation = keyframes`
@@ -111,13 +125,15 @@ const Name = styled.div`
 
 const TvBox = () => {
   return (
-    <Frame>
-      <Output>
-        <Name>Jake Pitman</Name> 
-      </Output>
-      <Scanlines />
-      <Glow />
-    </Frame>
+    <Container>
+      <Frame>
+        <Output>
+          <Name>Jake Pitman</Name> 
+        </Output>
+        <Scanlines />
+        <Glow />
+      </Frame>
+    </Container>
   );
 };
 
