@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
+import { changeCurrentSection } from '../redux/actions/index.js'
 
 import { ABOUT_ME, MY_TECH_JOURNEY, PROJECTS } from '../constants/nav-button-types'
 import { 
@@ -11,6 +12,7 @@ import {
 } from '../constants/colors'
 import { PHONE_BREAKPOINT } from '../constants/media-queries'
 
+//---------------------STYLING------------------------
 
 const Button = styled.button`
   border: none;
@@ -22,20 +24,36 @@ const Button = styled.button`
   box-shadow: 0px 5px 0px rgba(36, 39, 42);
   font-family: 'Geostar', cursive;
   font-size: 1.5rem;
-  //color: ${DEAD_GREY};
+  cursor: pointer;
 
   @media (min-width: ${PHONE_BREAKPOINT}) {
     width: 400px;
     font-size: 2rem;
   }
+
 `
+
+//--------------------COMPONENT-----------------------
+
 
 const mapStateToProps = state => {
   return { currentSection: state.currentSection }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    changeCurrentSection: newSection => dispatch(changeCurrentSection(newSection))
+  }
+}
+
 const ConnectedNavButton = (props) => {
 
+  const handleClick = (e) => {
+    e.preventDefault()
+    props.changeCurrentSection(props.buttonType)
+  }
+
+  //decide main color
   let mainColor
   switch (props.buttonType) {
     case ABOUT_ME:
@@ -61,10 +79,11 @@ const ConnectedNavButton = (props) => {
         : 
         {color: DEAD_GREY}
       }
+      onClick={handleClick}
     >{props.children}</Button>
   )
 }
 
-const NavButton = connect(mapStateToProps) (ConnectedNavButton)
+const NavButton = connect(mapStateToProps, mapDispatchToProps) (ConnectedNavButton)
 
 export default NavButton
