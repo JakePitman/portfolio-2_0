@@ -20,8 +20,8 @@ const Frame = styled.div`
   margin: 2rem 0;
 
   @media (min-width: 700px) {
-    width: 700px;
-    height: 500px;
+    width: 500px;
+    height: 50vh;
   }
 `
 
