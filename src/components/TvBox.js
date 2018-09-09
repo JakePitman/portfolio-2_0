@@ -2,7 +2,7 @@ import React from 'react';
 import styled, {keyframes} from 'styled-components'
 
 const Container = styled.div`
-  width: 90vw;
+  //width: 80vw;
   display: flex;
   justify-content: center;
 `
@@ -10,24 +10,24 @@ const Container = styled.div`
 const Frame = styled.div`
   background-color: transparent;
   border-radius: 2rem;
-  //border: 1rem solid;
   box-shadow: inset 0 0 2vw black,
     inset 0 0 3rem black,
     0 0 10rem black;
-  width: inherit;
+  width: 80vw;
   height: 300px;
   position: relative;
-  margin-top: 2rem;
-  //top: 2%;
-  //left: 3px;
+  margin: 2rem 0;
+
+  @media (min-width: 700px) {
+    width: 700px;
+    height: 500px;
+  }
 `
 
 const Output = styled.div`
-  //position: absolute;
   background-color: rgba(35, 44, 77);
   width: 100%;
   height: 100%;
-  //padding: 3rem 2rem;
   z-index: -1;
   display: flex;
   align-items: center;
@@ -67,17 +67,8 @@ const scanlinesAnimation = keyframes`
 
 const Scanlines = styled.div`
   animation: ${scanlinesAnimation} 8s infinite;
-  //width: 100%;
-  //height: 100%;
   width: inherit;
   height: inherit;
-  //background: repeating-linear-gradient(
-            //0deg,
-            //rgba(255,255,255,0.5),
-            //rgba(255,255,255,0.2) 1px,
-            //rgba(35,75,170,0.9) 2px,
-            //rgba(0,0,0,0.2) 3px,
-            //rgba(0,0,0,0.6) 4px);
   border: 1rem solid;
   border-radius: 1rem;
   position: absolute;
@@ -121,6 +112,11 @@ const Name = styled.div`
   color: #01C2FF;
   font-size: 50px;
   text-align: center;
+`
+
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
 `
 
 const TvBox = () => {
