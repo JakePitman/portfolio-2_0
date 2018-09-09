@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import styled, {keyframes} from 'styled-components'
+import { connect } from 'react-redux'
 
+import profilePicture from '../assets/img/profile.png'
 import { ABOUT_ME_MAIN_COLOR } from '../constants/colors'
+import { ABOUT_ME, MY_TECH_JOURNEY, PROJECTS } from '../constants/nav-button-types'
 import { GEOSTAR } from '../constants/fonts'
 
 const Container = styled.div`
   display: flex;
   justify-content: center;
 `
+
+//-------------------------------STYLING-------------------------
 
 const Frame = styled.div`
   background-color: transparent;
@@ -146,13 +151,35 @@ const Image = styled.img`
   height: 100%;
 `
 
-const TvBox = () => {
+//----------------------COMPONENT--------------------------
+
+const mapStateToProps = state => {
+  return { currentSection: state.currentSection }
+}
+
+const ConnectedTvBox = ({ currentSection }) => {
+
+  let outputJsx
+  switch ( currentSection ) {
+    case ABOUT_ME:
+      outputJsx = (
+        <Image src={profilePicture}/>
+      )
+      break;
+    default:
+      outputJsx = (
+        <Fragment>
+          <Name>Jake Pitman</Name> 
+          <Flicker>Jake Pitman</Flicker>
+        </Fragment>
+      )
+  }
+
   return (
     <Container>
       <Frame>
         <Output>
-          <Name>Jake Pitman</Name> 
-          <Flicker>Jake Pitman</Flicker>
+          {outputJsx}
         </Output>
         <Scanlines />
         <Glow />
@@ -160,5 +187,7 @@ const TvBox = () => {
     </Container>
   );
 };
+
+const TvBox = connect(mapStateToProps) (ConnectedTvBox)
 
 export default TvBox;
