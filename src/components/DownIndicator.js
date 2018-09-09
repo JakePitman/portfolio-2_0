@@ -8,13 +8,27 @@ const Banner = styled.div`
   background-color: ${SECTION_BACKGROUND};
   //position: absolute;
   //bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
+
+const DownArrow = styled.i`
+  border: solid grey;
+  border-width: 0 7px 7px 0;
+  font-size: 50px;
+  width: 30px;
+  height: 30px;
+  transform: rotate(45deg);
+  display: inline-block;
+`
+
 
 const DownIndicator = () => {
 
   return (
     <Banner> 
-      <h1>DOWN</h1>
+     <p> <DownArrow/></p>
     </Banner>
   )
 }
