@@ -1,15 +1,51 @@
 import React from 'react'
 import styled from 'styled-components'
+import AboutMeSection from './AboutMeSection'
+import MyTechJourneySection from './MyTechJourneySection'
+import ProjectsSection from './ProjectsSection'
+import { connect } from 'react-redux'
+
+import { SECTION_BACKGROUND } from '../constants/colors'
+import { ABOUT_ME, MY_TECH_JOURNEY, PROJECTS } from '../constants/nav-button-types'
+
+//---------------------STYLING-----------------------
 
 const Container = styled.div`
   width: 100%;
-  border: 1px solid black;
+  background: ${ SECTION_BACKGROUND }
+  margin: 0;
 `
 
-const SectionContainer = () => (
-  <Container>
-    <h1>Hello from SectionContainer</h1>
-  </Container>
-)
+//--------------------COMPONENT----------------------
+
+const mapStateToProps = state => {
+  return { currentSection: state.currentSection }
+}
+
+
+const ConnectedSectionContainer = ( { currentSection } ) => {
+  let currentSectionJsx
+  switch (currentSection) {
+    case ABOUT_ME:
+      currentSectionJsx = <AboutMeSection/>
+        break;
+    case MY_TECH_JOURNEY:
+      currentSectionJsx = <MyTechJourneySection/>
+        break;
+    case PROJECTS:
+      currentSectionJsx = <ProjectsSection/>
+        break;
+    default: 
+      break
+  } 
+
+  return (
+    <Container>
+      {currentSectionJsx}
+    </Container>
+  )
+}
+
+const SectionContainer = connect(mapStateToProps) (ConnectedSectionContainer)
 
 export default SectionContainer

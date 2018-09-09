@@ -11,12 +11,8 @@ import { TOP_SECTION_BACKGROUND } from './constants/colors'
 
 
 const Container = styled.div`
-  //max-width: 1140px;
-  //margin: auto auto;
-  //background: pink;
-  //display: flex;
-  //flex-direction: column;
-  //align-items: center;
+  display: flex;
+  flex-direction: column;
 `
 
 const TopSection = styled.div`
@@ -27,7 +23,6 @@ const TopSection = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 100vh;
-  padding: 1px;
 `
 
 class App extends Component {

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components'
+
 import { ABOUT_ME_MAIN_COLOR } from '../constants/colors'
+import { GEOSTAR } from '../constants/fonts'
 
 const Container = styled.div`
   display: flex;
@@ -113,7 +115,7 @@ const namePaddingAnimation = keyframes`
 const Name = styled.div`
   animation: ${nameShadowAnimation} 0.5s infinite;
   animation: ${namePaddingAnimation} 1.5s infinite;
-  font-family: 'Geostar', cursive;
+  font-family: ${ GEOSTAR };
   color: ${ABOUT_ME_MAIN_COLOR};
   font-size: 50px;
   text-align: center;
@@ -127,7 +129,7 @@ const flickerAnimation = keyframes`
 const Flicker = styled.div`
   animation: ${flickerAnimation} 2s infinite;
   position: absolute;
-  font-family: 'Geostar', cursive;
+  font-family: ${ GEOSTAR };
   color: rgba(113, 218, 252, 0.3);
   font-size: 50px;
   text-align: center;

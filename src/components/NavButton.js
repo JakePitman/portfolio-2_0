@@ -10,6 +10,7 @@ import {
   PROJECTS_MAIN_COLOR, 
   DEAD_GREY 
 } from '../constants/colors'
+import { GEOSTAR } from '../constants/fonts'
 import { PHONE_BREAKPOINT } from '../constants/media-queries'
 
 //---------------------STYLING------------------------
@@ -22,7 +23,7 @@ const Button = styled.button`
   margin: 1vh;
   background: linear-gradient(rgba(66, 69, 72), rgba(48, 51, 53));
   box-shadow: 0px 5px 0px rgba(36, 39, 42);
-  font-family: 'Geostar', cursive;
+  font-family: ${ GEOSTAR };
   font-size: 1.5rem;
   cursor: pointer;
 
