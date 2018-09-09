@@ -3,7 +3,6 @@ import styled, {keyframes} from 'styled-components'
 import { ABOUT_ME_MAIN_COLOR } from '../constants/colors'
 
 const Container = styled.div`
-  //width: 80vw;
   display: flex;
   justify-content: center;
 `
@@ -101,18 +100,43 @@ const Glow = styled.div`
   left: 0;
 `
 
-const nameAnimation = keyframes`
+const nameShadowAnimation = keyframes`
   0% { text-shadow: -3px 0.1rem 1rem #004F68 }
   50% { text-shadow: 3px 0.2rem 2rem #004f68 }
   100% { text-shadow: -3px 0.1rem 3rem #004f68 }
 `
 
+const namePaddingAnimation = keyframes`
+  0% { padding: 3px 0 0 2px; }
+  10% { padding: 0px 0 0 0; }
+`
 const Name = styled.div`
-  animation: ${nameAnimation} 0.5s infinite;
+  animation: ${nameShadowAnimation} 0.5s infinite;
+  animation: ${namePaddingAnimation} 1.5s infinite;
   font-family: 'Geostar', cursive;
   color: ${ABOUT_ME_MAIN_COLOR};
   font-size: 50px;
   text-align: center;
+`
+
+const flickerAnimation = keyframes`
+  0%, 17% { opacity: 0.4; }
+  15% ,95% { opacity: 0.1; }
+`
+
+const Flicker = styled.div`
+  animation: ${flickerAnimation} 2s infinite;
+  position: absolute;
+  font-family: 'Geostar', cursive;
+  color: rgba(113, 218, 252, 0.3);
+  font-size: 50px;
+  text-align: center;
+  //top: 25%;
+  //left: -2%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 20px;
+  padding-right: 10px;
 `
 
 const Image = styled.img`
@@ -126,6 +150,7 @@ const TvBox = () => {
       <Frame>
         <Output>
           <Name>Jake Pitman</Name> 
+          <Flicker>Jake Pitman</Flicker>
         </Output>
         <Scanlines />
         <Glow />

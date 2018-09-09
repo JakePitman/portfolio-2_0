@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { PHONE_BREAKPOINT } from '../constants/media-queries'
+import { DEAD_GREY } from '../constants/colors'
 
 const ButtonList = styled.div`
   width: 100%;
@@ -20,7 +21,7 @@ const Button = styled.button`
   box-shadow: 0px 5px 0px rgba(36, 39, 42);
   font-family: 'Geostar', cursive;
   font-size: 1.5rem;
-  color: #9C9C9C;
+  color: ${DEAD_GREY};
 
   @media (min-width: ${PHONE_BREAKPOINT}) {
     width: 400px;
