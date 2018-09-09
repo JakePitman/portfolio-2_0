@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, {keyframes} from 'styled-components'
+import { ABOUT_ME_MAIN_COLOR } from '../constants/colors'
 
 const Container = styled.div`
   //width: 80vw;
@@ -109,7 +110,7 @@ const nameAnimation = keyframes`
 const Name = styled.div`
   animation: ${nameAnimation} 0.5s infinite;
   font-family: 'Geostar', cursive;
-  color: #01C2FF;
+  color: ${ABOUT_ME_MAIN_COLOR};
   font-size: 50px;
   text-align: center;
 `

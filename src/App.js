@@ -5,6 +5,9 @@ import styled from 'styled-components'
 import SectionContainer from './containers/SectionContainer'
 import TvBox from './components/TvBox';
 import NavButtons from './components/NavButtons'
+import DownIndicator from './components/DownIndicator'
+
+import { TOP_SECTION_BACKGROUND } from './constants/colors'
 
 
 const Container = styled.div`
@@ -17,11 +20,13 @@ const Container = styled.div`
 `
 
 const TopSection = styled.div`
-  background: #97AAB8;
+  background: ${TOP_SECTION_BACKGROUND};
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
+  height: 100vh;
   padding: 1px;
 `
 
@@ -37,6 +42,7 @@ class App extends Component {
         <TopSection>
           <TvBox />
           <NavButtons />
+          <DownIndicator />
         </TopSection>
           <SectionContainer /> 
       </Container>
