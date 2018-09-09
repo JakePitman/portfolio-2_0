@@ -14,7 +14,7 @@ const Frame = styled.div`
     inset 0 0 3rem black,
     0 0 10rem black;
   width: 80vw;
-  height: 300px;
+  height: 40vh;
   position: relative;
   margin: 2rem 0;
 

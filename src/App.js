@@ -21,6 +21,8 @@ const TopSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  padding: 1px;
 `
 
 class App extends Component {
