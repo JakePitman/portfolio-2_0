@@ -107,7 +107,7 @@ const nameShadowAnimation = keyframes`
 `
 
 const namePaddingAnimation = keyframes`
-  0% { padding: 3px 0 0 2px; }
+  0% { padding: 2px 0 0 1px; }
   10% { padding: 0px 0 0 0; }
 `
 const Name = styled.div`
@@ -120,8 +120,8 @@ const Name = styled.div`
 `
 
 const flickerAnimation = keyframes`
-  0%, 17% { opacity: 0.4; }
-  15% ,95% { opacity: 0.1; }
+  0%, 17%, 80% { opacity: 0.4; }
+  15% , 30%, 60%, 85%, 95% { opacity: 0; }
 `
 
 const Flicker = styled.div`
