@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { connect } from 'react-redux'
 import { changeCurrentSection } from '../redux/actions/index.js'
 
@@ -15,6 +15,7 @@ import { PHONE_BREAKPOINT } from '../constants/media-queries'
 
 //---------------------STYLING------------------------
 
+
 const Button = styled.button`
   border: none;
   border-radius: 10px;
@@ -26,6 +27,8 @@ const Button = styled.button`
   font-family: ${ GEOSTAR };
   font-size: 1.5rem;
   cursor: pointer;
+  color: ${DEAD_GREY};
+  outline: none;
 
   @media (min-width: ${PHONE_BREAKPOINT}) {
     width: 400px;
@@ -33,6 +36,7 @@ const Button = styled.button`
   }
 
 `
+
 
 //--------------------COMPONENT-----------------------
 
@@ -67,19 +71,39 @@ const ConnectedNavButton = (props) => {
       mainColor = PROJECTS_MAIN_COLOR;
       break;
     default: 
-      mainColor = DEAD_GREY
+      mainColor = null
       break
   }
 
+  //create glowAnimation keyframes with main color
+  const glowAnimation = keyframes`
+  from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px ${mainColor}, 0 0 70px ${mainColor}, 0 0 80px ${mainColor}, 0 0 100px ${mainColor}, 0 0 150px ${mainColor};
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px ${mainColor}, 0 0 35px ${mainColor}, 0 0 40px ${mainColor}, 0 0 50px ${mainColor}, 0 0 75px ${mainColor};
+    }
+  `
+
   return ( 
     <Button 
-      style={
-        props.currentSection == props.buttonType 
-        ? 
-        {color: mainColor} 
-        : 
-        {color: DEAD_GREY}
+      //style={
+        //props.currentSection == props.buttonType 
+        //? 
+        //{color: mainColor} 
+        //: 
+        //{color: DEAD_GREY}
+      //}
+    style={
+      props.currentSection === props.buttonType
+      ?
+      { 
+      color: 'white',
+      animation: `${glowAnimation} 1.5s ease-in-out infinite alternate`
       }
+      :
+      null
+    }
       onClick={handleClick}
     >{props.children}</Button>
   )
