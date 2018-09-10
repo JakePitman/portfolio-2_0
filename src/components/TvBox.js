@@ -8,12 +8,13 @@ import { ABOUT_ME, MY_TECH_JOURNEY, PROJECTS } from '../constants/nav-button-typ
 import { GEOSTAR } from '../constants/fonts'
 import { PHONE_BREAKPOINT } from '../constants/media-queries'
 
+
+//-------------------------------STYLING-------------------------
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
 `
-
-//-------------------------------STYLING-------------------------
 
 const Frame = styled.div`
   background-color: transparent;
