@@ -1,15 +1,11 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { connect } from 'react-redux'
 import { changeCurrentSection } from '../redux/actions/index.js'
 
-import { ABOUT_ME, MY_TECH_JOURNEY, PROJECTS } from '../constants/nav-button-types'
-import { 
-  ABOUT_ME_MAIN_COLOR, 
-  MY_TECH_JOURNEY_MAIN_COLOR, 
-  PROJECTS_MAIN_COLOR, 
-  DEAD_GREY 
-} from '../constants/colors'
+import generateNeonStyling from '../utilities/generate-neon-styling'
+import getMainColor from '../utilities/get-main-color'
+import { DEAD_GREY } from '../constants/colors'
 import { GEOSTAR } from '../constants/fonts'
 import { PHONE_BREAKPOINT } from '../constants/media-queries'
 
@@ -58,49 +54,13 @@ const ConnectedNavButton = (props) => {
     props.changeCurrentSection(props.buttonType)
   }
 
-  //decide main color
-  let mainColor
-  switch (props.buttonType) {
-    case ABOUT_ME:
-      mainColor = ABOUT_ME_MAIN_COLOR;
-      break;
-    case MY_TECH_JOURNEY:
-      mainColor = MY_TECH_JOURNEY_MAIN_COLOR;
-      break;
-    case PROJECTS:
-      mainColor = PROJECTS_MAIN_COLOR;
-      break;
-    default: 
-      mainColor = null
-      break
-  }
-
-  //create glowAnimation keyframes with main color
-  const glowAnimation = keyframes`
-  from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px ${mainColor}, 0 0 70px ${mainColor}, 0 0 80px ${mainColor}, 0 0 100px ${mainColor}, 0 0 150px ${mainColor};
-    }
-    to {
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px ${mainColor}, 0 0 35px ${mainColor}, 0 0 40px ${mainColor}, 0 0 50px ${mainColor}, 0 0 75px ${mainColor};
-    }
-  `
-
+  const mainColor = getMainColor(props.buttonType)
   return ( 
     <Button 
-      //style={
-        //props.currentSection == props.buttonType 
-        //? 
-        //{color: mainColor} 
-        //: 
-        //{color: DEAD_GREY}
-      //}
     style={
       props.currentSection === props.buttonType
       ?
-      { 
-      color: 'white',
-      animation: `${glowAnimation} 1.5s ease-in-out infinite alternate`
-      }
+      generateNeonStyling(mainColor)
       :
       null
     }
