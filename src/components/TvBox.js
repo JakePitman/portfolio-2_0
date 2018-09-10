@@ -6,6 +6,7 @@ import profilePicture from '../assets/img/profile.png'
 import { ABOUT_ME_MAIN_COLOR } from '../constants/colors'
 import { ABOUT_ME, MY_TECH_JOURNEY, PROJECTS } from '../constants/nav-button-types'
 import { GEOSTAR } from '../constants/fonts'
+import { PHONE_BREAKPOINT } from '../constants/media-queries'
 
 const Container = styled.div`
   display: flex;
@@ -25,7 +26,7 @@ const Frame = styled.div`
   position: relative;
   margin: 2rem 0;
 
-  @media (min-width: 700px) {
+  @media (min-width: ${ PHONE_BREAKPOINT }) {
     width: 500px;
     height: 50vh;
   }
@@ -138,8 +139,6 @@ const Flicker = styled.div`
   color: rgba(113, 218, 252, 0.3);
   font-size: 50px;
   text-align: center;
-  //top: 25%;
-  //left: -2%;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 20px;
