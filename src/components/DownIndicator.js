@@ -65,17 +65,6 @@ const ConnectedDownIndicator = ({ currentSection }) => {
       }
   `
 
-// using styles object to make dynamically changing color easier
-//const downArrowStyles = {
-  //borderRight: `solid ${mainColor}`,
-  //borderBottom: `solid ${mainColor}`,
-  //borderWidth: '0 3px 3px 0',
-  //width: '30px',
-  //height: '30px',
-  //transform: 'rotate(45deg)',
-  //display: 'inline-block'
-//}
-
   return (
     <Banner> 
      <p>

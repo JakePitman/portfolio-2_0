@@ -139,8 +139,6 @@ const Flicker = styled.div`
   color: rgba(113, 218, 252, 0.3);
   font-size: 50px;
   text-align: center;
-  //top: 25%;
-  //left: -2%;
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 20px;
