@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import SectionContainer from './containers/SectionContainer'
 import TvBox from './components/TvBox';
-import NavButtons from './components/NavButtons'
+import NavButtons from './components/NavButtons/NavButtons'
 import DownIndicator from './components/DownIndicator'
 
 import { TOP_SECTION_BACKGROUND } from './constants/colors'

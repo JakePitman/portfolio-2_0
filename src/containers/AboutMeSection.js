@@ -1,36 +1,37 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { ABOUT_ME_MAIN_COLOR, DEAD_GREY } from '../constants/colors'
-import { GEOSTAR, SHARE_TECH } from '../constants/fonts'
-import { PHONE_BREAKPOINT } from '../constants/media-queries'
+import RainyHeader from '../components/RainyHeader/RainyHeader'
+//import { ABOUT_ME_MAIN_COLOR, DEAD_GREY } from '../constants/colors'
+//import { GEOSTAR, SHARE_TECH } from '../constants/fonts'
+//import { PHONE_BREAKPOINT } from '../constants/media-queries'
 
 //------------------STYLING------------------
 
-const MainColorText = styled.span`
-  color: ${ ABOUT_ME_MAIN_COLOR }
-  font-family: ${ GEOSTAR }
-`
-const ComingSoon = styled.h1`
-  font-size: 1.5rem;
-  font-family: ${SHARE_TECH};
-  text-align: center;
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  color: ${DEAD_GREY}
+  const MainContainer = styled.div`
+    position: relative;
+  `
 
-  @media ( min-width: ${ PHONE_BREAKPOINT } ) {
-    font-size: 100px;
-  }
-`
+  const ContentContainer = styled.div`
+    position: relative;
+    z-index: 1;
+    border: 1px solid pink;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  `
 
-const AboutMeSection = () => {
+const AboutMeSection = ({ mainColor }) => {
 
+  //<RainyHeader mainColor={mainColor} /> 
   return (
-    <ComingSoon><MainColorText>About me</MainColorText> is coming soon!</ComingSoon>
+    <MainContainer>
+      <ContentContainer>
+        <h1>About me</h1>
+      </ContentContainer>
+    </MainContainer>
   )
 }
 
