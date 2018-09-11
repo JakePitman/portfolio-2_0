@@ -91,7 +91,9 @@ const StaggeredAppearanceParagraph = ({ mainColor }) => {
   return (
     <Paragraph id="staggered-appearance-paragraph">
       <SecondText className="second-text">I’m </SecondText>{' '}
-      <FirstText className="first-text">Jake:</FirstText> <br />
+      <FirstText className="first-text">Jake:</FirstText>
+      <br />
+      <br />
       <SecondText className="second-text">I’m</SecondText>{' '}
       <FirstText className="first-text">calm</FirstText>{' '}
       <SecondText className="second-text">
@@ -99,7 +101,9 @@ const StaggeredAppearanceParagraph = ({ mainColor }) => {
       </SecondText>{' '}
       <FirstText className="first-text">clear-minded</FirstText>{' '}
       <SecondText className="second-text">
-        in all that I do.<br />
+        in all that I do.
+        <br />
+        <br />
         I’m{' '}
       </SecondText>{' '}
       <FirstText className="first-text">inspired</FirstText>{' '}
