@@ -1,32 +1,115 @@
-import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
+import lifecycle from 'react-pure-lifecycle';
 
-import { MAIN_PARAGRAPH_FONT } from '../../constants/fonts'
+import generateScrollEffect from '../../utilities/generate-scroll-effect';
+import { MAIN_PARAGRAPH_FONT } from '../../constants/fonts';
+
+//-------------------SETUP LIFECYCLE METHODS FOR EVENT LISTENER--------------------
+
+function callbackFunction() {
+  generateScrollEffect(
+    document.getElementById('staggered-appearance-paragraph'),
+    () => attachScrollStyles()
+  );
+}
+const attachScrollStyles = () => {
+  const firstTextElements = document.getElementsByClassName('first-text');
+  const firstTextArr = [].slice.call(firstTextElements);
+  const appearAnimation = keyframes`
+    0%, 25% {
+      opacity: 0.2;
+    }
+    24%, 100% {
+      opacity: 1;
+    }
+    `;
+  firstTextArr.forEach((elem, i) => {
+    elem.style.animation = `${appearAnimation} 0.5s forwards`;
+    elem.style.animationDelay = `${i + 1}s`;
+  });
+  const secondTextElements = document.getElementsByClassName('second-text');
+  const secondTextArr = [].slice.call(secondTextElements);
+  secondTextArr.forEach((elem) => {
+    elem.style.animation = `${appearAnimation} 0.5s forwards`;
+    elem.style.animationDelay = `${firstTextArr.length + 1}s`;
+  });
+};
+
+const componentDidMount = (props) => {
+  //function passed to scroll listener
+  //setup scroll listener
+  window.addEventListener('scroll', callbackFunction);
+};
+
+const componentWillUnmount = (props) => {
+  window.removeEventListener('scroll', callbackFunction);
+};
+
+const methods = {
+  componentDidMount,
+  componentWillUnmount
+};
+//-----------------------------------STYLING-------------------------------
 
 const StaggeredAppearanceParagraph = ({ mainColor }) => {
-
   const Paragraph = styled.p`
-    font-family: ${ MAIN_PARAGRAPH_FONT };
+    font-family: ${MAIN_PARAGRAPH_FONT};
     font-size: 40px;
     text-align: center;
-  `
+  `;
+
+  const appear = keyframes`
+    0% {
+      opacity: 1;
+      text-shadow: 0 0 10px ${mainColor};
+    }
+    100% {
+      opacity: 1;
+      text-shadow: 0 0 10px ${mainColor};
+    }
+  `;
 
   const FirstText = styled.span`
-    color: ${ mainColor }
-  `
+    &.first-text {
+      color: ${mainColor};
+      animation: ${appear} 1s infinite;
+      opacity: 0;
+      text-shadow: 0 0 20px ${mainColor};
+    }
+  `;
 
   const SecondText = styled.span`
-    color: white;
-  `
-  return(
-    <Paragraph>
-      <SecondText>I’m </SecondText> <FirstText>Jake:</FirstText> <br/>
-
-      <SecondText>I’m</SecondText> <FirstText>calm</FirstText> <SecondText>under pressure, and strive to be </SecondText> <FirstText>clear-minded</FirstText> <SecondText>in all that I do.<br/>
-
-      I’m </SecondText> <FirstText>inspired</FirstText> <SecondText>to work as a developer so that I can be both </SecondText> <FirstText>a teacher and a student</FirstText> <SecondText>my whole life.</SecondText>
+    &.second-text {
+      animation: ${appear} 1s infinite;
+      color: white;
+      opacity: 0;
+      text-shadow: 0 0 20px ${mainColor};
+    }
+  `;
+  //-----------------------------RETURNED COMPONENT----------------------------
+  return (
+    <Paragraph id="staggered-appearance-paragraph">
+      <SecondText className="second-text">I’m </SecondText>{' '}
+      <FirstText className="first-text">Jake:</FirstText> <br />
+      <SecondText className="second-text">I’m</SecondText>{' '}
+      <FirstText className="first-text">calm</FirstText>{' '}
+      <SecondText className="second-text">
+        under pressure, and strive to be{' '}
+      </SecondText>{' '}
+      <FirstText className="first-text">clear-minded</FirstText>{' '}
+      <SecondText className="second-text">
+        in all that I do.<br />
+        I’m{' '}
+      </SecondText>{' '}
+      <FirstText className="first-text">inspired</FirstText>{' '}
+      <SecondText className="second-text">
+        to work as a developer so that I can be both{' '}
+      </SecondText>{' '}
+      <FirstText className="first-text">a teacher and a student</FirstText>{' '}
+      <SecondText className="second-text">my whole life.</SecondText>
     </Paragraph>
-  )
-}
+  );
+};
 
-export default StaggeredAppearanceParagraph
+export default lifecycle(methods)(StaggeredAppearanceParagraph);
