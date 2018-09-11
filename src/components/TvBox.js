@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import profilePicture from '../assets/img/profile.png'
 import { ABOUT_ME_MAIN_COLOR } from '../constants/colors'
 import { ABOUT_ME, MY_TECH_JOURNEY, PROJECTS } from '../constants/nav-button-types'
-import { GEOSTAR } from '../constants/fonts'
+import { TOP_SECTION_FONT } from '../constants/fonts'
 import { PHONE_BREAKPOINT } from '../constants/media-queries'
 
 
@@ -122,7 +122,7 @@ const namePaddingAnimation = keyframes`
 const Name = styled.div`
   animation: ${nameShadowAnimation} 0.5s infinite;
   animation: ${namePaddingAnimation} 1.5s infinite;
-  font-family: ${ GEOSTAR };
+  font-family: ${ TOP_SECTION_FONT };
   color: ${ABOUT_ME_MAIN_COLOR};
   font-size: 50px;
   text-align: center;
@@ -136,7 +136,7 @@ const flickerAnimation = keyframes`
 const Flicker = styled.div`
   animation: ${flickerAnimation} 2s infinite;
   position: absolute;
-  font-family: ${ GEOSTAR };
+  font-family: ${ TOP_SECTION_FONT };
   color: rgba(113, 218, 252, 0.3);
   font-size: 50px;
   text-align: center;
@@ -164,6 +164,22 @@ const ConnectedTvBox = ({ currentSection }) => {
     case ABOUT_ME:
       outputJsx = (
         <Image src={profilePicture}/>
+      )
+      break;
+    case MY_TECH_JOURNEY:
+      outputJsx = (
+        <Fragment>
+          <Name>Jake Pitman</Name> 
+          <Flicker>Jake Pitman</Flicker>
+        </Fragment>
+      )
+      break;
+    case PROJECTS:
+      outputJsx = (
+        <Fragment>
+          <Name>Jake Pitman</Name> 
+          <Flicker>Jake Pitman</Flicker>
+        </Fragment>
       )
       break;
     default:

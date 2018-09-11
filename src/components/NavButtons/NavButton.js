@@ -6,7 +6,7 @@ import { changeCurrentSection } from '../../redux/actions/index.js'
 import generateNeonStyling from '../../utilities/generate-neon-styling'
 import getMainColor from '../../utilities/get-main-color'
 import { DEAD_GREY } from '../../constants/colors'
-import { GEOSTAR } from '../../constants/fonts'
+import { TOP_SECTION_FONT } from '../../constants/fonts'
 import { PHONE_BREAKPOINT } from '../../constants/media-queries'
 
 //---------------------STYLING------------------------
@@ -20,7 +20,7 @@ const Button = styled.button`
   margin: 1vh;
   background: linear-gradient(rgba(66, 69, 72), rgba(48, 51, 53));
   box-shadow: 0px 5px 0px rgba(36, 39, 42);
-  font-family: ${ GEOSTAR };
+  font-family: ${ TOP_SECTION_FONT };
   font-size: 1.5rem;
   cursor: pointer;
   color: ${DEAD_GREY};

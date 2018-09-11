@@ -1,7 +1,5 @@
 import { ABOUT_ME, MY_TECH_JOURNEY, PROJECTS } from '../constants/nav-button-types'
 import { 
-  SECTION_BACKGROUND,
-  DEAD_GREY,
   ABOUT_ME_MAIN_COLOR,
   MY_TECH_JOURNEY_MAIN_COLOR,
   PROJECTS_MAIN_COLOR
