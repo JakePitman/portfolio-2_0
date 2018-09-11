@@ -1,10 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import RainyHeader from '../components/RainyHeader/RainyHeader'
-//import { ABOUT_ME_MAIN_COLOR, DEAD_GREY } from '../constants/colors'
-//import { GEOSTAR, SHARE_TECH } from '../constants/fonts'
-//import { PHONE_BREAKPOINT } from '../constants/media-queries'
+import RainyBackdrop from '../components/RainyHeader/RainyBackdrop'
+import SubHeading from '../components/SubHeading'
+import StaggeredAppearanceParagraph from '../components/AboutMeSubComponents/StaggeredAppearanceParagraph'
 
 //------------------STYLING------------------
 
@@ -25,11 +24,14 @@ import RainyHeader from '../components/RainyHeader/RainyHeader'
 
 const AboutMeSection = ({ mainColor }) => {
 
-  //<RainyHeader mainColor={mainColor} /> 
   return (
     <MainContainer>
+      { /*<RainyBackdrop mainColor={mainColor} />*/ }
       <ContentContainer>
-        <h1>About me</h1>
+        <SubHeading mainColor={ mainColor }>
+          Who am I?
+        </SubHeading>
+        <StaggeredAppearanceParagraph mainColor={ mainColor }/>
       </ContentContainer>
     </MainContainer>
   )

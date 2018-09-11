@@ -2,18 +2,18 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { PROJECTS_MAIN_COLOR, DEAD_GREY } from '../constants/colors'
-import { GEOSTAR, SHARE_TECH } from '../constants/fonts'
+import { TOP_SECTION_FONT, MAIN_PARAGRAPH_FONT } from '../constants/fonts'
 import { PHONE_BREAKPOINT } from '../constants/media-queries'
 
 //------------------STYLING------------------
 
 const MainColorText = styled.span`
   color: ${ PROJECTS_MAIN_COLOR }
-  font-family: ${ GEOSTAR }
+  font-family: ${ TOP_SECTION_FONT }
 `
 const ComingSoon = styled.h1`
   font-size: 1.5rem;
-  font-family: ${SHARE_TECH};
+  font-family: ${MAIN_PARAGRAPH_FONT};
   text-align: center;
   width: 100%;
   height: 50vh;
