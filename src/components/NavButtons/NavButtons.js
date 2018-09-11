@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { PHONE_BREAKPOINT } from '../constants/media-queries'
-import { DEAD_GREY } from '../constants/colors'
-import { ABOUT_ME, MY_TECH_JOURNEY, PROJECTS } from '../constants/nav-button-types'
+import { PHONE_BREAKPOINT } from '../../constants/media-queries'
+import { DEAD_GREY } from '../../constants/colors'
+import { ABOUT_ME, MY_TECH_JOURNEY, PROJECTS } from '../../constants/nav-button-types'
 
 import NavButton from './NavButton'
 

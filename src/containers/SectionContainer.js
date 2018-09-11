@@ -5,6 +5,7 @@ import MyTechJourneySection from './MyTechJourneySection'
 import ProjectsSection from './ProjectsSection'
 import { connect } from 'react-redux'
 
+import getMainColor from '../utilities/get-main-color'
 import { SECTION_BACKGROUND } from '../constants/colors'
 import { ABOUT_ME, MY_TECH_JOURNEY, PROJECTS } from '../constants/nav-button-types'
 
@@ -27,13 +28,13 @@ const ConnectedSectionContainer = ( { currentSection } ) => {
   let currentSectionJsx
   switch (currentSection) {
     case ABOUT_ME:
-      currentSectionJsx = <AboutMeSection/>
+      currentSectionJsx = <AboutMeSection mainColor={getMainColor(currentSection)}/>
         break;
     case MY_TECH_JOURNEY:
-      currentSectionJsx = <MyTechJourneySection/>
+      currentSectionJsx = <MyTechJourneySection mainColor={getMainColor(currentSection)}/>
         break;
     case PROJECTS:
-      currentSectionJsx = <ProjectsSection/>
+      currentSectionJsx = <ProjectsSection mainColor={getMainColor(currentSection)}/>
         break;
     default: 
       break

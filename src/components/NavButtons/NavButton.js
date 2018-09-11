@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import { connect } from 'react-redux'
-import { changeCurrentSection } from '../redux/actions/index.js'
+import { changeCurrentSection } from '../../redux/actions/index.js'
 
-import generateNeonStyling from '../utilities/generate-neon-styling'
-import getMainColor from '../utilities/get-main-color'
-import { DEAD_GREY } from '../constants/colors'
-import { GEOSTAR } from '../constants/fonts'
-import { PHONE_BREAKPOINT } from '../constants/media-queries'
+import generateNeonStyling from '../../utilities/generate-neon-styling'
+import getMainColor from '../../utilities/get-main-color'
+import { DEAD_GREY } from '../../constants/colors'
+import { GEOSTAR } from '../../constants/fonts'
+import { PHONE_BREAKPOINT } from '../../constants/media-queries'
 
 //---------------------STYLING------------------------
 
