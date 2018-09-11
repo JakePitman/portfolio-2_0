@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import RainyBackdrop from '../components/RainyHeader/RainyBackdrop';
 import SubHeading from '../components/SubHeading';
+import WorkInProgressSign from '../components/WorkInProgressSign';
 import StaggeredAppearanceParagraph from '../components/AboutMeSubComponents/StaggeredAppearanceParagraph';
 
 //------------------STYLING------------------
@@ -29,6 +30,7 @@ const AboutMeSection = ({ mainColor }) => {
       <ContentContainer>
         <SubHeading mainColor={mainColor}>Who am I?</SubHeading>
         <StaggeredAppearanceParagraph mainColor={mainColor} />
+        <WorkInProgressSign mainColor={mainColor} />
       </ContentContainer>
     </MainContainer>
   );
