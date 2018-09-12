@@ -26,7 +26,7 @@ const ContentContainer = styled.div`
 const AboutMeSection = ({ mainColor }) => {
   return (
     <MainContainer>
-      {/*<RainyBackdrop mainColor={mainColor} />*/}
+      *<RainyBackdrop mainColor={mainColor} />
       <ContentContainer>
         <SubHeading mainColor={mainColor}>Who am I?</SubHeading>
         <StaggeredAppearanceParagraph mainColor={mainColor} />

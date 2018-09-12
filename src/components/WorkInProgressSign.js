@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
 import { TOP_SECTION_FONT, SUBHEADING_FONT } from '../constants/fonts';
-import { SECTION_BACKGROUND } from '../constants/colors';
+import { SECTION_BACKGROUND_TRANSLUCENT } from '../constants/colors';
 import { PHONE_BREAKPOINT } from '../constants/media-queries';
 
 const WorkInProgressSign = ({ mainColor }) => {
@@ -13,7 +13,7 @@ const WorkInProgressSign = ({ mainColor }) => {
       0px 0px 60px ${mainColor}, 0px 0px 60px ${mainColor} inset;
     position: relative;
     height: 300px;
-    background: ${SECTION_BACKGROUND};
+    background: ${SECTION_BACKGROUND_TRANSLUCENT};
     margin: 40vh 0;
 
     @media (max-width: ${PHONE_BREAKPOINT}) {
@@ -52,7 +52,7 @@ const WorkInProgressSign = ({ mainColor }) => {
   }
   `;
 
-  const FlickerText = styled.h1`
+  const FlickerText = styled.p`
     font-size: inherit;
     display: inline;
     animation: ${flickerAnimation} 3s infinite;

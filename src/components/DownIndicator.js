@@ -1,10 +1,10 @@
-import React from 'react'
-import styled from 'styled-components'
-import { connect } from 'react-redux'
+import React from 'react';
+import styled from 'styled-components';
+import { connect } from 'react-redux';
 
-import generateNeonStyling from '../utilities/generate-neon-styling'
-import getMainColor from '../utilities/get-main-color'
-import { SECTION_BACKGROUND, DEAD_GREY } from '../constants/colors'
+import generateNeonStyling from '../utilities/generate-neon-styling';
+import getMainColor from '../utilities/get-main-color';
+import { SECTION_BACKGROUND, DEAD_GREY } from '../constants/colors';
 
 //---------------------STYLING-----------------------
 
@@ -15,7 +15,7 @@ const Banner = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const DownCharacter = styled.p`
   color: ${DEAD_GREY};
@@ -23,35 +23,28 @@ const DownCharacter = styled.p`
   font-family: comic-sans;
   transform: rotate(180deg);
   margin: 0;
-`
+`;
 
 //---------------------COMPONENT---------------------
 
-const mapStateToProps = state => {
-  return { currentSection: state.currentSection }
-}
-
+const mapStateToProps = (state) => {
+  return { currentSection: state.currentSection };
+};
 
 const ConnectedDownIndicator = ({ currentSection }) => {
-
-  const mainColor = getMainColor(currentSection)
+  const mainColor = getMainColor(currentSection);
 
   return (
-    <Banner> 
-     <p>
-    <DownCharacter 
-      style={
-        currentSection
-        ?
-        generateNeonStyling(mainColor)
-        :
-        null
-      }
-    >⇪</DownCharacter></p>
+    <Banner>
+      <DownCharacter
+        style={currentSection ? generateNeonStyling(mainColor) : null}
+      >
+        ⇪
+      </DownCharacter>
     </Banner>
-  )
-}
+  );
+};
 
-const DownIndicator = connect(mapStateToProps) (ConnectedDownIndicator)
+const DownIndicator = connect(mapStateToProps)(ConnectedDownIndicator);
 
-export default DownIndicator
+export default DownIndicator;
