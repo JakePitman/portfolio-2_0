@@ -22,8 +22,8 @@ const RainyHeader = ({ mainColor }) => {
       <Raindrop mainColor={mainColor} number="1" timingOffset={0.4} />
       <Raindrop mainColor={mainColor} number="2" timingOffset={1.0} />
       <Raindrop mainColor={mainColor} number="3" timingOffset={1.6} />
-      <Raindrop mainColor={mainColor} number="3" timingOffset={2.0} />
-      <Raindrop mainColor={mainColor} number="4" timingOffset={2.8} />
+      <Raindrop mainColor={mainColor} number="4" timingOffset={2.0} />
+      <Raindrop mainColor={mainColor} number="5" timingOffset={2.8} />
     </Container>
   );
 };

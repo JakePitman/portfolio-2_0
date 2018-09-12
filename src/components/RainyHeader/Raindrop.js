@@ -6,11 +6,11 @@ import { PHONE_BREAKPOINT } from '../../constants/media-queries';
 
 //----------------LIFECYCLE METHODS------------
 
-var raindropInterval;
+//store intervals across all Raindrop components
+let raindropIntervalArray = [];
 
-const componentDidMount = ({ parameters, number, timingOffset }) => {
+const componentDidMount = ({ number, timingOffset }) => {
   const generateRaindropParameters = () => {
-    console.log('generating parameters');
     const zIndex = getRandomInt(0, 4);
     const left = getRandomInt(5, 80);
     const height = getRandomInt(90, 100);
@@ -26,7 +26,7 @@ const componentDidMount = ({ parameters, number, timingOffset }) => {
   };
   setTimeout(
     () =>
-      (raindropInterval = setInterval(
+      (raindropIntervalArray[number] = setInterval(
         generateRaindropParameters,
         5000 + timingOffset * 1000
       )),
@@ -34,9 +34,8 @@ const componentDidMount = ({ parameters, number, timingOffset }) => {
   );
 };
 
-const componentWillUnmount = (props) => {
-  console.log('INTERVALID: ', raindropInterval);
-  clearInterval(raindropInterval);
+const componentWillUnmount = ({ number }) => {
+  clearInterval(raindropIntervalArray[number]);
 };
 
 const methods = {
@@ -160,9 +159,9 @@ const Raindrop = ({ parameters, number, timingOffset }) => {
         opacity: 0.7;
     }
     65% {
-      width: 65%;
-      height: 65%;
-      opacity: 0%;
+      width: 55%;
+      height: 55%;
+      opacity: 0;
     }
   `;
 
