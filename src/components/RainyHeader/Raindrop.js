@@ -11,7 +11,6 @@ let raindropIntervalArray = [];
 
 const componentDidMount = ({ number, timingOffset }) => {
   const generateRaindropParameters = () => {
-    const zIndex = getRandomInt(0, 4);
     const left = getRandomInt(5, 80);
     const height = getRandomInt(90, 100);
     const fallParametersElement = document.getElementById(
@@ -22,7 +21,6 @@ const componentDidMount = ({ number, timingOffset }) => {
     }
     fallParametersElement.style.height = `${height}%`;
     fallParametersElement.style.left = `${left}%`;
-    fallParametersElement.zIndex = zIndex.toString();
   };
   setTimeout(
     () =>
@@ -80,7 +78,7 @@ const Raindrop = ({ parameters, number, timingOffset }) => {
     50% {
       width: 15px;
       height: 3px;
-      top: 98%;
+      top: 97.5%;
       opacity: 0;
     }
     100% {
