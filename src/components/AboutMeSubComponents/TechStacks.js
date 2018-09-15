@@ -87,7 +87,7 @@ const TechStacks = ({ mainColor }) => {
     bottom: 3vh;
     margin-left: auto;
     margin-right: auto;
-    transition: all 2s;
+    transition: all 2.5s;
     @media (max-width: ${PHONE_BREAKPOINT}) {
       width: 30vw;
       height: 30vw;

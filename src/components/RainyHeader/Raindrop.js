@@ -68,13 +68,10 @@ const Raindrop = ({ parameters, number, timingOffset }) => {
     0% {
         top: 0%;
       }
-    42% {
+    47% {
       width: 3px;
       height: 15px;
       opacity: 1;
-    }
-    47% {
-      opacity: 1%;
     }
     50% {
       width: 15px;
@@ -114,12 +111,28 @@ const Raindrop = ({ parameters, number, timingOffset }) => {
       width: 0%;
       height: 0%;
       opacity: 0;
+      border: 1px solid transparent;
+    }
+    25% {
+        box-shadow: 0 0 0px 0px rgba(255,255,255,0.5);
+    }
+    40% {
+        border: 1px solid white;
+        box-shadow: 0 0 200px 50px rgba(255,255,255,0.7);
     }
     50% {
       width: 0%;
       height: 0%;
       opacity: 0.7;
+      border: 1px solid white;
+      box-shadow: 0 0 50px 10px rgba(255,255,255,0.5);
     }
+  55% {
+      box-shadow: 0 0 0px rgba(255,255,255,0.3);
+  }
+  60% {
+      border: 1px solid #01c2ff;
+  }
     65% {
       width: 100%;
       height: 100%;
@@ -130,7 +143,7 @@ const Raindrop = ({ parameters, number, timingOffset }) => {
   const OuterCircle = styled.div`
     animation: ${outerCircleAnimation} ${totalAnimationTime}s infinite;
     opacity: 0;
-    border: 1px solid #01c2ff;
+    //border: 1px solid #01c2ff;
     border-radius: 50%;
     position: absolute;
     left: 0;
@@ -142,14 +155,14 @@ const Raindrop = ({ parameters, number, timingOffset }) => {
 
   const innerCircleAnimation = keyframes`
     0% {
+      border: 1px solid transparent;
       width: 0%;
       height: 0%;
-      opacity: 0;
     }
     30% {
+      border: 1px solid transparent;
       width: 0%;
       height: 0%;
-      opacity: 0;
     }
     50% {
         width: 0%;
