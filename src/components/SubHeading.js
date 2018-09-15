@@ -15,7 +15,7 @@ const SubHeading = ({ children, mainColor }) => {
   `;
   const Heading = styled.h1`
     text-align: center;
-    font-size: 150px;
+    font-size: 130px;
     font-family: ${SUBHEADING_FONT};
     color: white;
     animation: ${glowAnimation} 1.5s infinite ease-in-out alternate;

@@ -78,9 +78,9 @@ const TechStacks = ({ mainColor }) => {
 
   const Diamond = styled.div`
     position: absolute;
-    height: 200px;
-    width: 200px;
-    line-height: 200px;
+    height: 180px;
+    width: 180px;
+    line-height: 180px;
     text-align: center;
     left: 0;
     right: 0;
