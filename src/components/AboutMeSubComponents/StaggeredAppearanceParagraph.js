@@ -55,11 +55,10 @@ const methods = {
 };
 //-----------------------------------STYLING-------------------------------
 const Container = styled.div`
-  height: 100vh;
+  height: 110vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  border: 1px solid green;
 `;
 
 const StaggeredAppearanceParagraph = ({ mainColor }) => {
