@@ -15,6 +15,7 @@ function callbackFunction() {
   );
 }
 
+//set bottom property to diamonds according to position
 const attachScrollStyles = () => {
   const firstDiamonds = [].slice.call(document.getElementsByClassName('first'));
   firstDiamonds.forEach((diamond) => {

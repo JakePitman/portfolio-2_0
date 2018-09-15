@@ -36,6 +36,7 @@ const attachScrollStyles = () => {
     elem.style.animation = `${appearAnimation} 0.5s forwards`;
     elem.style.animationDelay = `${firstTextArr.length + 1}s`;
   });
+  window.removeEventListener('scroll', callbackFunction);
 };
 
 const componentDidMount = (props) => {
