@@ -21,6 +21,7 @@ const SubHeading = ({ children, mainColor }) => {
     @media (max-width: ${PHONE_BREAKPOINT}) {
       font-size: 10vw;
     }
+    margin-top: 0;
   `;
 
   return <Heading>{children}</Heading>;

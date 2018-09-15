@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import lifecycle from 'react-pure-lifecycle';
 
@@ -54,6 +54,10 @@ const methods = {
 //-----------------------------------STYLING-------------------------------
 const Container = styled.div`
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-between;
 `;
 
 const StaggeredAppearanceParagraph = ({ mainColor }) => {
@@ -61,7 +65,6 @@ const StaggeredAppearanceParagraph = ({ mainColor }) => {
     font-family: ${MAIN_PARAGRAPH_FONT};
     font-size: 40px;
     text-align: center;
-    height: 80vh;
   `;
 
   const appear = keyframes`
@@ -94,7 +97,7 @@ const StaggeredAppearanceParagraph = ({ mainColor }) => {
   `;
   //-----------------------------RETURNED COMPONENT----------------------------
   return (
-    <Fragment>
+    <Container>
       <SubHeading mainColor={mainColor}>Who am I?</SubHeading>
       <Paragraph id="staggered-appearance-paragraph">
         <SecondText className="second-text">I’m </SecondText>{' '}
@@ -120,7 +123,7 @@ const StaggeredAppearanceParagraph = ({ mainColor }) => {
         <FirstText className="first-text">a teacher and a student</FirstText>{' '}
         <SecondText className="second-text">my whole life.</SecondText>
       </Paragraph>
-    </Fragment>
+    </Container>
   );
 };
 
