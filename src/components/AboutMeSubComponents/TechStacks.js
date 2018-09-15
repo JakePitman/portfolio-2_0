@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import SubHeading from '../SubHeading';
 import { MAIN_PARAGRAPH_FONT } from '../../constants/fonts';
+import { PHONE_BREAKPOINT } from '../../constants/media-queries';
 
 const TechStacks = ({ mainColor }) => {
   //-----------------------------STYLING-----------------------------
@@ -13,10 +14,17 @@ const TechStacks = ({ mainColor }) => {
     border: 1px solid pink;
     flex-direction: column;
     align-items: center;
+    @media (max-width: ${PHONE_BREAKPOINT}) {
+      height: 80vh;
+      margin-top: 15vh;
+    }
   `;
   const Container = styled.div`
     position: relative;
     width: 100%;
+    @media (max-width: ${PHONE_BREAKPOINT}) {
+      width: 100vw;
+    }
     height: 80vh;
     border: 1px solid green;
     display: flex;
@@ -37,10 +45,14 @@ const TechStacks = ({ mainColor }) => {
     text-align: center;
     left: 0;
     right: 0;
-    bottom: 20px;
+    bottom: 3vh;
     margin-left: auto;
     margin-right: auto;
     transition: all 1.5s;
+    @media (max-width: ${PHONE_BREAKPOINT}) {
+      width: 30vw;
+      height: 30vw;
+    }
     &:before {
       position: absolute;
       content: '';
@@ -56,7 +68,7 @@ const TechStacks = ({ mainColor }) => {
   const First = styled(Diamond)`
     z-index: 3;
     ${Container}:hover & {
-      bottom: 470px;
+      bottom: 48vh;
     }
     &:before {
       background: rgba(1, 194, 255, 0.9);
@@ -65,7 +77,7 @@ const TechStacks = ({ mainColor }) => {
   const Second = styled(Diamond)`
     z-index: 2;
     ${Container}:hover & {
-      bottom: 320px;
+      bottom: 33vh;
     }
     &:before {
       background: rgba(1, 194, 245, 0.9);
@@ -74,7 +86,7 @@ const TechStacks = ({ mainColor }) => {
   const Third = styled(Diamond)`
     z-index: 1;
     ${Container}:hover & {
-      bottom: 170px;
+      bottom: 18vh;
     }
     &:before {
       background: rgba(1, 194, 235, 0.9);
@@ -99,6 +111,9 @@ const TechStacks = ({ mainColor }) => {
     transform: rotateX(45deg) rotateZ(-45deg);
     font-size: 50px;
     text-shadow: 0 0 30px;
+    @media (max-width: ${PHONE_BREAKPOINT}) {
+      line-height: 30vw;
+    }
   `;
 
   return (
