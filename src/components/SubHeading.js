@@ -14,6 +14,7 @@ const SubHeading = ({ children, mainColor }) => {
       }
   `;
   const Heading = styled.h1`
+    text-align: center;
     font-size: 150px;
     font-family: ${SUBHEADING_FONT};
     color: white;
@@ -21,6 +22,7 @@ const SubHeading = ({ children, mainColor }) => {
     @media (max-width: ${PHONE_BREAKPOINT}) {
       font-size: 10vw;
     }
+    margin-top: 0;
   `;
 
   return <Heading>{children}</Heading>;

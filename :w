@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import lifecycle from 'react-pure-lifecycle';
 
@@ -14,7 +14,6 @@ function callbackFunction() {
     () => attachScrollStyles()
   );
 }
-
 const attachScrollStyles = () => {
   const firstTextElements = document.getElementsByClassName('first-text');
   const firstTextArr = [].slice.call(firstTextElements);
@@ -36,7 +35,6 @@ const attachScrollStyles = () => {
     elem.style.animation = `${appearAnimation} 0.5s forwards`;
     elem.style.animationDelay = `${firstTextArr.length + 1}s`;
   });
-  window.removeEventListener('scroll', callbackFunction);
 };
 
 const componentDidMount = (props) => {
@@ -58,8 +56,8 @@ const Container = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  border: 1px solid green;
+  justify-content: center;
+  align-items: space-between;
 `;
 
 const StaggeredAppearanceParagraph = ({ mainColor }) => {
@@ -67,7 +65,6 @@ const StaggeredAppearanceParagraph = ({ mainColor }) => {
     font-family: ${MAIN_PARAGRAPH_FONT};
     font-size: 40px;
     text-align: center;
-    margin-bottom: 20vh;
   `;
 
   const appear = keyframes`

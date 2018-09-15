@@ -2,9 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 import RainyBackdrop from '../components/RainyHeader/RainyBackdrop';
-import SubHeading from '../components/SubHeading';
 import WorkInProgressSign from '../components/WorkInProgressSign';
 import StaggeredAppearanceParagraph from '../components/AboutMeSubComponents/StaggeredAppearanceParagraph';
+import TechStacks from '../components/AboutMeSubComponents/TechStacks';
 
 //------------------STYLING------------------
 
@@ -26,10 +26,10 @@ const ContentContainer = styled.div`
 const AboutMeSection = ({ mainColor }) => {
   return (
     <MainContainer>
-      *<RainyBackdrop mainColor={mainColor} />
+      <RainyBackdrop mainColor={mainColor} />
       <ContentContainer>
-        <SubHeading mainColor={mainColor}>Who am I?</SubHeading>
         <StaggeredAppearanceParagraph mainColor={mainColor} />
+        <TechStacks mainColor={mainColor} />
         <WorkInProgressSign mainColor={mainColor} />
       </ContentContainer>
     </MainContainer>
