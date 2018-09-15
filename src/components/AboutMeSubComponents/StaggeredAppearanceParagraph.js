@@ -14,6 +14,7 @@ function callbackFunction() {
     () => attachScrollStyles()
   );
 }
+
 const attachScrollStyles = () => {
   const firstTextElements = document.getElementsByClassName('first-text');
   const firstTextArr = [].slice.call(firstTextElements);

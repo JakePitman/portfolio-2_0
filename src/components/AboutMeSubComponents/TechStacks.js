@@ -1,9 +1,50 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
+import lifecycle from 'react-pure-lifecycle';
 
+import generateScrollEffect from '../../utilities/generate-scroll-effect';
 import SubHeading from '../SubHeading';
 import { MAIN_PARAGRAPH_FONT } from '../../constants/fonts';
 import { PHONE_BREAKPOINT } from '../../constants/media-queries';
+
+//------------------------------SETUP SCROLL LISTENER---------------
+
+function callbackFunction() {
+  generateScrollEffect(document.getElementById('tech-stacks-container'), () =>
+    attachScrollStyles()
+  );
+}
+
+const attachScrollStyles = () => {
+  const firstDiamonds = [].slice.call(document.getElementsByClassName('first'));
+  firstDiamonds.forEach((diamond) => {
+    diamond.style.bottom = '48vh';
+  });
+  const secondDiamonds = [].slice.call(
+    document.getElementsByClassName('second')
+  );
+  secondDiamonds.forEach((diamond) => {
+    diamond.style.bottom = '33vh';
+  });
+  const thirdDiamonds = [].slice.call(document.getElementsByClassName('third'));
+  thirdDiamonds.forEach((diamond) => {
+    diamond.style.bottom = '18vh';
+  });
+  window.removeEventListener('scroll', callbackFunction);
+};
+
+const componentDidMount = () => {
+  window.addEventListener('scroll', callbackFunction);
+};
+
+const componentWillUnmount = (props) => {
+  window.removeEventListener('scroll', callbackFunction);
+};
+
+const methods = {
+  componentDidMount,
+  componentWillUnmount
+};
 
 const TechStacks = ({ mainColor }) => {
   //-----------------------------STYLING-----------------------------
@@ -11,7 +52,6 @@ const TechStacks = ({ mainColor }) => {
   const OverallContainer = styled.div`
     height: 100vh;
     display: flex;
-    border: 1px solid pink;
     flex-direction: column;
     align-items: center;
     @media (max-width: ${PHONE_BREAKPOINT}) {
@@ -26,14 +66,12 @@ const TechStacks = ({ mainColor }) => {
       width: 100vw;
     }
     height: 80vh;
-    border: 1px solid green;
     display: flex;
   `;
 
   const StackContainer = styled.div`
     width: 50%;
     height: 100%;
-    border: 1px solid grey;
     position: relative;
   `;
 
@@ -48,7 +86,7 @@ const TechStacks = ({ mainColor }) => {
     bottom: 3vh;
     margin-left: auto;
     margin-right: auto;
-    transition: all 1.5s;
+    transition: all 2s;
     @media (max-width: ${PHONE_BREAKPOINT}) {
       width: 30vw;
       height: 30vw;
@@ -67,27 +105,18 @@ const TechStacks = ({ mainColor }) => {
 
   const First = styled(Diamond)`
     z-index: 3;
-    ${Container}:hover & {
-      bottom: 48vh;
-    }
     &:before {
       background: rgba(1, 194, 255, 0.9);
     }
   `;
   const Second = styled(Diamond)`
     z-index: 2;
-    ${Container}:hover & {
-      bottom: 33vh;
-    }
     &:before {
       background: rgba(1, 194, 245, 0.9);
     }
   `;
   const Third = styled(Diamond)`
     z-index: 1;
-    ${Container}:hover & {
-      bottom: 18vh;
-    }
     &:before {
       background: rgba(1, 194, 235, 0.9);
     }
@@ -112,6 +141,7 @@ const TechStacks = ({ mainColor }) => {
     font-size: 50px;
     text-shadow: 0 0 30px;
     @media (max-width: ${PHONE_BREAKPOINT}) {
+      font-size: 30px;
       line-height: 30vw;
     }
   `;
@@ -119,29 +149,29 @@ const TechStacks = ({ mainColor }) => {
   return (
     <OverallContainer>
       <SubHeading mainColor={mainColor}>Tech Stacks</SubHeading>;
-      <Container>
+      <Container id="tech-stacks-container">
         <StackContainer>
-          <Second>
+          <Second className="second">
             <Text>Ruby</Text>
           </Second>
-          <Third>
+          <Third className="third">
             <Text>Rails</Text>
           </Third>
-          <Fourth>
+          <Fourth className="fourth">
             <Text>Postgres</Text>
           </Fourth>
         </StackContainer>
         <StackContainer>
-          <First>
+          <First className="first">
             <Text>Node</Text>
           </First>
-          <Second>
+          <Second className="second">
             <Text>React</Text>
           </Second>
-          <Third>
+          <Third className="third">
             <Text>Express</Text>
           </Third>
-          <Fourth>
+          <Fourth className="fourth">
             <Text>MongoDB</Text>
           </Fourth>
         </StackContainer>
@@ -150,4 +180,4 @@ const TechStacks = ({ mainColor }) => {
   );
 };
 
-export default TechStacks;
+export default lifecycle(methods)(TechStacks);
