@@ -14,6 +14,7 @@ const SubHeading = ({ children, mainColor }) => {
       }
   `;
   const Heading = styled.h1`
+    text-align: center;
     font-size: 150px;
     font-family: ${SUBHEADING_FONT};
     color: white;

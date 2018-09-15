@@ -56,6 +56,10 @@ const methods = {
 //-----------------------------------STYLING-------------------------------
 const Container = styled.div`
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid green;
 `;
 
 const StaggeredAppearanceParagraph = ({ mainColor }) => {
@@ -63,7 +67,7 @@ const StaggeredAppearanceParagraph = ({ mainColor }) => {
     font-family: ${MAIN_PARAGRAPH_FONT};
     font-size: 40px;
     text-align: center;
-    height: 80vh;
+    margin-bottom: 20vh;
   `;
 
   const appear = keyframes`
@@ -96,7 +100,7 @@ const StaggeredAppearanceParagraph = ({ mainColor }) => {
   `;
   //-----------------------------RETURNED COMPONENT----------------------------
   return (
-    <Fragment>
+    <Container>
       <SubHeading mainColor={mainColor}>Who am I?</SubHeading>
       <Paragraph id="staggered-appearance-paragraph">
         <SecondText className="second-text">I’m </SecondText>{' '}
@@ -122,7 +126,7 @@ const StaggeredAppearanceParagraph = ({ mainColor }) => {
         <FirstText className="first-text">a teacher and a student</FirstText>{' '}
         <SecondText className="second-text">my whole life.</SecondText>
       </Paragraph>
-    </Fragment>
+    </Container>
   );
 };
 

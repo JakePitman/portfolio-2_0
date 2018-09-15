@@ -89,11 +89,11 @@ const Raindrop = ({ parameters, number, timingOffset }) => {
   `;
 
   const Droplet = styled.div`
-    animation: ${fallAnimation} ${totalAnimationTime}s infinite;
+    animation: ${fallAnimation} ${totalAnimationTime}s infinite ease-in-out;
     width: 3px;
     height: 15px;
     border-radius: 50%;
-    background: white;
+    background: rgba(255, 255, 255, 0.7);
     box-shadow: 0px 0px 85px 10px #01c2ff;
     position: absolute;
     left: 0;
