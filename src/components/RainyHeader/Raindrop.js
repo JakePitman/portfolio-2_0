@@ -22,13 +22,14 @@ const componentDidMount = ({ number, timingOffset }) => {
     fallParametersElement.style.height = `${height}%`;
     fallParametersElement.style.left = `${left}%`;
   };
+  generateRaindropParameters();
   setTimeout(
     () =>
       (raindropIntervalArray[number] = setInterval(
         generateRaindropParameters,
-        5000 + timingOffset * 1000
+        10000 + timingOffset * 1000
       )),
-    0.75 * (5000 + timingOffset * 1000)
+    0.8 * (10000 + timingOffset * 1000)
   );
 };
 
@@ -50,7 +51,7 @@ const getRandomInt = (min, max) => {
 const Raindrop = ({ parameters, number, timingOffset }) => {
   //-------------------STYLING-------------------
 
-  const totalAnimationTime = 5 + timingOffset;
+  const totalAnimationTime = 10 + timingOffset;
 
   const FallParameters = styled.div`
     height: 100%;
@@ -78,7 +79,7 @@ const Raindrop = ({ parameters, number, timingOffset }) => {
     50% {
       width: 15px;
       height: 3px;
-      top: 97.5%;
+      top: 99%;
       opacity: 0;
     }
     100% {
@@ -103,8 +104,7 @@ const Raindrop = ({ parameters, number, timingOffset }) => {
 
   const DropletParameters = styled.div`
     width: 100%;
-    height: 5%;
-    //border: 1px solid grey;
+    height: 2%;
     position: absolute;
     bottom: 0;
   `;
