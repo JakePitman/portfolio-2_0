@@ -6,6 +6,7 @@ import generateScrollEffect from '../../utilities/generate-scroll-effect';
 import SubHeading from '../SubHeading';
 import { MAIN_PARAGRAPH_FONT } from '../../constants/fonts';
 import { PHONE_BREAKPOINT } from '../../constants/media-queries';
+import { ABOUT_ME_MAIN_COLOR } from '../../constants/colors';
 
 //------------------------------SETUP SCROLL LISTENER---------------
 
@@ -101,32 +102,33 @@ const TechStacks = ({ mainColor }) => {
       width: 100%;
       transform: rotateX(45deg) rotateZ(45deg);
       box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.5);
+      background: ${ABOUT_ME_MAIN_COLOR};
     }
   `;
 
   const First = styled(Diamond)`
     z-index: 3;
-    &:before {
-      background: rgba(1, 194, 255, 0.9);
-    }
+    //&:before {
+    //background: rgba(1, 194, 255, 0.9);
+    //}
   `;
   const Second = styled(Diamond)`
     z-index: 2;
-    &:before {
-      background: rgba(1, 194, 245, 0.9);
-    }
+    //&:before {
+    //background: rgba(1, 194, 245, 0.9);
+    //}
   `;
   const Third = styled(Diamond)`
     z-index: 1;
-    &:before {
-      background: rgba(1, 194, 235, 0.9);
-    }
+    //&:before {
+    //background: rgba(1, 194, 235, 0.9);
+    //}
   `;
   const Fourth = styled(Diamond)`
     z-index: 0;
-    &:before {
-      background: rgba(1, 194, 225, 0.9);
-    }
+    //&:before {
+    //background: rgba(1, 194, 225, 0.9);
+    //}
   `;
 
   const Text = styled.p`

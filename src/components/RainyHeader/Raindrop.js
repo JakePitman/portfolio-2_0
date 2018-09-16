@@ -3,6 +3,7 @@ import styled, { keyframes } from 'styled-components';
 import lifecycle from 'react-pure-lifecycle';
 
 import { PHONE_BREAKPOINT } from '../../constants/media-queries';
+import { ABOUT_ME_MAIN_COLOR } from '../../constants/colors';
 
 //----------------LIFECYCLE METHODS------------
 
@@ -92,7 +93,7 @@ const Raindrop = ({ parameters, number, timingOffset }) => {
     height: 15px;
     border-radius: 50%;
     background: rgba(255, 255, 255, 0.7);
-    box-shadow: 0px 0px 85px 10px #01c2ff;
+    box-shadow: 0px 0px 85px 10px ${ABOUT_ME_MAIN_COLOR};
     position: absolute;
     left: 0;
     right: 0;
@@ -118,20 +119,22 @@ const Raindrop = ({ parameters, number, timingOffset }) => {
     }
     40% {
         border: 1px solid white;
-        box-shadow: 0 0 200px 50px rgba(255,255,255,0.7);
+        box-shadow: 0 0 200px 30px ${ABOUT_ME_MAIN_COLOR};
     }
     50% {
       width: 0%;
       height: 0%;
       opacity: 0.7;
       border: 1px solid white;
-      box-shadow: 0 0 50px 10px rgba(255,255,255,0.5);
+      //box-shadow: 0 0 50px 10px rgba(255,255,255,0.5);
+      box-shadow: 0 0 30px 10px ${ABOUT_ME_MAIN_COLOR};
     }
   55% {
-      box-shadow: 0 0 0px rgba(255,255,255,0.3);
+      //box-shadow: 0 0 0px rgba(255,255,255,0.3);
+      box-shadow: 0 0 0px ${ABOUT_ME_MAIN_COLOR};
   }
   60% {
-      border: 1px solid #01c2ff;
+      border: 1px solid ${ABOUT_ME_MAIN_COLOR};
   }
     65% {
       width: 100%;
@@ -143,7 +146,6 @@ const Raindrop = ({ parameters, number, timingOffset }) => {
   const OuterCircle = styled.div`
     animation: ${outerCircleAnimation} ${totalAnimationTime}s infinite;
     opacity: 0;
-    //border: 1px solid #01c2ff;
     border-radius: 50%;
     position: absolute;
     left: 0;
@@ -179,7 +181,7 @@ const Raindrop = ({ parameters, number, timingOffset }) => {
   const InnerCircle = styled.div`
     animation: ${innerCircleAnimation} ${totalAnimationTime}s infinite;
     opacity: 0;
-    border: 1px solid #01c2ff;
+    border: 1px solid ${ABOUT_ME_MAIN_COLOR};
     border-radius: 50%;
     position: absolute;
     left: 0;
