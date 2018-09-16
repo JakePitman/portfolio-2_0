@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import lifecycle from 'react-pure-lifecycle';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import generateScrollEffect from '../../utilities/generate-scroll-effect';
 import SubHeading from '../SubHeading';
@@ -131,7 +132,7 @@ const TechStacks = ({ mainColor }) => {
     //}
   `;
 
-  const Text = styled.p`
+  const Content = styled.div`
     font-family: ${MAIN_PARAGRAPH_FONT};
     postion: relative;
     left: 0;
@@ -149,33 +150,78 @@ const TechStacks = ({ mainColor }) => {
     }
   `;
 
+  const Text = styled.div`
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 0;
+    margin: 0;
+    width: 100%;
+  `;
+
+  const Icon = styled.i``;
+
   return (
     <OverallContainer>
       <SubHeading mainColor={mainColor}>Tech Stacks</SubHeading>;
       <Container id="tech-stacks-container">
         <StackContainer>
           <Second className="second">
-            <Text>Ruby</Text>
+            <Content>
+              <Icon className="devicon-ruby-plain" />
+              <Text>
+                <p>Ruby</p>
+              </Text>
+            </Content>
           </Second>
           <Third className="third">
-            <Text>Rails</Text>
+            <Content>
+              <Text>
+                <p>Rails</p>
+              </Text>
+              <Icon className="devicon-rails-plain" />
+            </Content>
           </Third>
           <Fourth className="fourth">
-            <Text>Postgres</Text>
+            <Content>
+              <Text>
+                <p>Postgres</p>
+              </Text>
+              <Icon className="devicon-postgresql-plain" />
+            </Content>
           </Fourth>
         </StackContainer>
         <StackContainer>
           <First className="first">
-            <Text>Node</Text>
+            <Content>
+              <Text>
+                <p>Node</p>
+              </Text>
+              <Icon className="devicon-nodejs-plain" />
+            </Content>
           </First>
           <Second className="second">
-            <Text>React</Text>
+            <Content>
+              <Text>
+                <p>React</p>
+              </Text>
+              <Icon className="devicon-react-original" />
+            </Content>
           </Second>
           <Third className="third">
-            <Text>Express</Text>
+            <Content>
+              <Text>
+                <p>Express</p>
+              </Text>
+              <Icon className="devicon-express-original" />
+            </Content>
           </Third>
           <Fourth className="fourth">
-            <Text>MongoDB</Text>
+            <Content>
+              <Text>
+                <p>MongoDB</p>
+              </Text>
+              <Icon className="devicon-mongodb-plain" />
+            </Content>
           </Fourth>
         </StackContainer>
       </Container>
