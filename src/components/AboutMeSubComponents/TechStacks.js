@@ -6,7 +6,7 @@ import generateScrollEffect from '../../utilities/generate-scroll-effect';
 import SubHeading from '../SubHeading';
 import { MAIN_PARAGRAPH_FONT } from '../../constants/fonts';
 import { PHONE_BREAKPOINT } from '../../constants/media-queries';
-import { ABOUT_ME_MAIN_COLOR } from '../../constants/colors';
+import { ABOUT_ME_MAIN_COLOR_TRANSLUCENT } from '../../constants/colors';
 
 //------------------------------SETUP SCROLL LISTENER---------------
 
@@ -102,7 +102,7 @@ const TechStacks = ({ mainColor }) => {
       width: 100%;
       transform: rotateX(45deg) rotateZ(45deg);
       box-shadow: 8px 8px 12px rgba(0, 0, 0, 0.5);
-      background: ${ABOUT_ME_MAIN_COLOR};
+      background: ${ABOUT_ME_MAIN_COLOR_TRANSLUCENT};
     }
   `;
 
