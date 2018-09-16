@@ -65,6 +65,9 @@ const Interests = ({ mainColor }) => {
     height: 80vh;
     width: 100%;
     margin-top: 20vh;
+    @media (max-width: ${PHONE_BREAKPOINT}) {
+      height: 90vh;
+    }
   `;
   const InterestsContainer = styled.div`
     width: 100%;

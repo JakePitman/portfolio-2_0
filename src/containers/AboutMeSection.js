@@ -27,7 +27,9 @@ const ContentContainer = styled.div`
 const AboutMeSection = ({ mainColor }) => {
   return (
     <MainContainer>
-      <RainyBackdrop mainColor={mainColor} />
+      {window.innerWidth > 1000 ? (
+        <RainyBackdrop mainColor={mainColor} />
+      ) : null}
       <ContentContainer>
         <StaggeredAppearanceParagraph mainColor={mainColor} />
         <TechStacks mainColor={mainColor} />
