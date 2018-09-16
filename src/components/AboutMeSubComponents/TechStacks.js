@@ -52,22 +52,21 @@ const TechStacks = ({ mainColor }) => {
   //-----------------------------STYLING-----------------------------
 
   const OverallContainer = styled.div`
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     @media (max-width: ${PHONE_BREAKPOINT}) {
-      height: 80vh;
       margin-top: 15vh;
     }
   `;
   const Container = styled.div`
+    height: 75vh;
     position: relative;
     width: 100%;
     @media (max-width: ${PHONE_BREAKPOINT}) {
+      height: 80vh;
       width: 100vw;
     }
-    height: 80vh;
     display: flex;
     justify-content: space-around;
     overflow: hidden;
