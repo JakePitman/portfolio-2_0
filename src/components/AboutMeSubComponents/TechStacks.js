@@ -1,7 +1,6 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import lifecycle from 'react-pure-lifecycle';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import generateScrollEffect from '../../utilities/generate-scroll-effect';
 import SubHeading from '../SubHeading';
@@ -70,6 +69,8 @@ const TechStacks = ({ mainColor }) => {
     }
     height: 80vh;
     display: flex;
+    justify-content: space-around;
+    overflow: hidden;
   `;
 
   const StackContainer = styled.div`

@@ -11,8 +11,13 @@ import { TOP_SECTION_BACKGROUND } from './constants/colors';
 //Fontawesome setup
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStroopwafel } from '@fortawesome/free-solid-svg-icons';
-library.add(faStroopwafel);
+import {
+  faYinYang,
+  faLanguage,
+  faCode,
+  faGamepad
+} from '@fortawesome/free-solid-svg-icons';
+library.add(faYinYang, faLanguage, faCode, faGamepad);
 
 const Container = styled.div`
   display: flex;

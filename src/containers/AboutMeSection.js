@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import RainyBackdrop from '../components/RainyHeader/RainyBackdrop';
+import Interests from '../components/AboutMeSubComponents/Interests';
 import WorkInProgressSign from '../components/WorkInProgressSign';
 import StaggeredAppearanceParagraph from '../components/AboutMeSubComponents/StaggeredAppearanceParagraph';
 import TechStacks from '../components/AboutMeSubComponents/TechStacks';
@@ -30,6 +31,7 @@ const AboutMeSection = ({ mainColor }) => {
       <ContentContainer>
         <StaggeredAppearanceParagraph mainColor={mainColor} />
         <TechStacks mainColor={mainColor} />
+        <Interests mainColor={mainColor} />
         <WorkInProgressSign mainColor={mainColor} />
       </ContentContainer>
     </MainContainer>
