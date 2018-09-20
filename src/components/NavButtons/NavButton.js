@@ -56,7 +56,7 @@ const ConnectedNavButton = (props) => {
         props.currentSection === props.buttonType
           ? {
               color: 'white',
-              textShadow: `0 0 30px ${mainColor}`
+              textShadow: `0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px ${mainColor}, 0 0 35px ${mainColor}, 0 0 40px ${mainColor}, 0 0 50px ${mainColor}, 0 0 75px ${mainColor}`
             }
           : null
       }
