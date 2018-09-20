@@ -1,17 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
+import { changeCurrentSection } from '../redux/actions/index.js';
 import { TOP_SECTION_FONT } from '../constants/fonts';
 import { DEAD_GREY } from '../constants/colors';
 import { PHONE_BREAKPOINT } from '../constants/media-queries';
 
-const BackToTopButton = ({ mainColor }) => {
+const mapStateToProps = (state) => {
+  return { currentSection: state.currentSection };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeCurrentSection: (newSection) =>
+      dispatch(changeCurrentSection(newSection))
+  };
+};
+
+const ConnectedBackToTopButton = ({
+  mainColor,
+  changeCurrentSection,
+  buttonType
+}) => {
   const Container = styled.div`
-    height: 30vh;
+    height: 50vh;
     display: flex;
     align-items: center;
   `;
   const Button = styled.h2`
+    cursor: pointer;
     color: ${DEAD_GREY}
     box-shadow: 0 0 5px ${DEAD_GREY};
     text-align: center;
@@ -19,7 +37,7 @@ const BackToTopButton = ({ mainColor }) => {
     font-family: ${TOP_SECTION_FONT};
     border-radius: 20px;
     padding: 20px;
-    transition: all 1s;
+    transition: all 0.5s;
     &:hover {
       color: white;
       text-shadow: 0 0 2.5px ${mainColor}, 0 0 5px ${mainColor},
@@ -34,11 +52,21 @@ const BackToTopButton = ({ mainColor }) => {
   }
   `;
 
+  const handleClick = (e) => {
+    e.preventDefault();
+    changeCurrentSection(buttonType);
+  };
+
   return (
     <Container>
-      <Button>Back to top</Button>
+      <Button onClick={handleClick}>Back to top</Button>
     </Container>
   );
 };
+
+const BackToTopButton = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ConnectedBackToTopButton);
 
 export default BackToTopButton;
