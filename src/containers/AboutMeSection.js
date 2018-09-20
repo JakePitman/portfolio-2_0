@@ -5,6 +5,7 @@ import RainyBackdrop from '../components/RainyHeader/RainyBackdrop';
 import Interests from '../components/AboutMeSubComponents/Interests';
 import StaggeredAppearanceParagraph from '../components/AboutMeSubComponents/StaggeredAppearanceParagraph';
 import TechStacks from '../components/AboutMeSubComponents/TechStacks';
+import BackToTopButton from '../components/BackToTopButton';
 
 //------------------STYLING------------------
 
@@ -33,6 +34,7 @@ const AboutMeSection = ({ mainColor }) => {
         <StaggeredAppearanceParagraph mainColor={mainColor} />
         <TechStacks mainColor={mainColor} />
         <Interests mainColor={mainColor} />
+        <BackToTopButton mainColor={mainColor} />
       </ContentContainer>
     </MainContainer>
   );
