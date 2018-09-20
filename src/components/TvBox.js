@@ -155,7 +155,9 @@ const Flicker = styled.div`
   padding-right: 10px;
 `;
 
-const SectionTextList = styled.ul``;
+const SectionTextList = styled.ul`
+  padding: 0;
+`;
 
 //----------------------COMPONENT--------------------------
 
@@ -172,7 +174,8 @@ const ConnectedTvBox = ({ currentSection }) => {
     font-size: 50px;
     list-style: none;
     @media (max-width: ${PHONE_BREAKPOINT}) {
-      font-size: 30px;
+      font-size: 20px;
+      margin: 10px;
     }
   `;
 
