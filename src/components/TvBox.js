@@ -171,6 +171,9 @@ const ConnectedTvBox = ({ currentSection }) => {
     margin: 20px;
     font-size: 50px;
     list-style: none;
+    @media (max-width: ${PHONE_BREAKPOINT}) {
+      font-size: 30px;
+    }
   `;
 
   let outputJsx;
