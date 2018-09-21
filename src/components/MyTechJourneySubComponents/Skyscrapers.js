@@ -14,7 +14,7 @@ const turnLightsOn = (lights, timeout) => {
     () =>
       lights.forEach((light) => {
         light.style.background = 'white';
-        light.style.boxShadow = '0 0 20px white';
+        //light.style.boxShadow = '0 0 20px white';
       }),
     timeout
   );
