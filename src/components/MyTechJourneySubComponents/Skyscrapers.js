@@ -26,10 +26,10 @@ const componentDidMount = (props) => {
   const lights3 = [].slice.call(document.getElementsByClassName('light-3'));
   const lights4 = [].slice.call(document.getElementsByClassName('light-4'));
   const lights5 = [].slice.call(document.getElementsByClassName('light-5'));
-  turnLightsOn(lights1, 1000);
-  turnLightsOn(lights2, 1500);
-  turnLightsOn(lights3, 1700);
-  turnLightsOn(lights4, 2000);
+  turnLightsOn(lights1, 1);
+  turnLightsOn(lights2, 1000);
+  turnLightsOn(lights3, 1300);
+  turnLightsOn(lights4, 1800);
   turnLightsOn(lights5, 2300);
   window.scrollTo(0, document.body.scrollHeight);
 };
