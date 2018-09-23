@@ -10,7 +10,6 @@ import { TOP_SECTION_BACKGROUND } from './constants/colors';
 
 //Fontawesome setup
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faYinYang,
   faLanguage,

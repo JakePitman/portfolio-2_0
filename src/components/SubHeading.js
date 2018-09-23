@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 import { SUBHEADING_FONT } from '../constants/fonts';
 import { PHONE_BREAKPOINT } from '../constants/media-queries';

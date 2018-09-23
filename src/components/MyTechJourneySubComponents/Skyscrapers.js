@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import lifecycle from 'react-pure-lifecycle';
 
-import { SECTION_BACKGROUND } from '../../constants/colors';
 import Skyscraper from './Skyscraper';
 
 const getRandomInt = (min, max) => {
@@ -26,11 +25,11 @@ const componentDidMount = (props) => {
   const lights3 = [].slice.call(document.getElementsByClassName('light-3'));
   const lights4 = [].slice.call(document.getElementsByClassName('light-4'));
   const lights5 = [].slice.call(document.getElementsByClassName('light-5'));
-  turnLightsOn(lights1, 1);
-  turnLightsOn(lights2, 1000);
-  turnLightsOn(lights3, 1300);
-  turnLightsOn(lights4, 1800);
-  turnLightsOn(lights5, 2300);
+  turnLightsOn(lights1, 1000);
+  turnLightsOn(lights2, 1300);
+  turnLightsOn(lights3, 1800);
+  turnLightsOn(lights4, 2200);
+  turnLightsOn(lights5, 2500);
   window.scrollTo(0, document.body.scrollHeight);
 };
 
@@ -90,7 +89,6 @@ const Skyscrapers = () => {
   //Generate Skyscrapers:
   const generateSkyscrapers = () => {
     const rowOfSkyscrapers = [];
-    window.innerWidth > 1000;
     for (
       let i = 0;
       i < (window.innerWidth > 1000 ? getRandomInt(6, 8) : getRandomInt(4, 5));
