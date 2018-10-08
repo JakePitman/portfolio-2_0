@@ -4,12 +4,13 @@ import styled from 'styled-components';
 
 import SliderCard from './SliderCard';
 import SliderHero from './SliderHero';
+import cardsInfo from './cardsInfo';
 
 const SlickSlider = () => {
   //-------------------------STYLING------------------
 
   const Container = styled.div`
-    width: 90%;
+    width: 80%;
     border: 1px solid green;
   `;
 
@@ -34,25 +35,6 @@ const SlickSlider = () => {
     swipeToSlide: true
   };
 
-  const cardsInfo = [
-    {
-      title: 'first card!',
-      description: 'first description'
-    },
-    {
-      title: 'second card!',
-      description: 'first description'
-    },
-    {
-      title: 'third card!',
-      description: 'first description'
-    },
-    {
-      title: 'fourth card!',
-      description: 'first description'
-    }
-  ];
-
   return (
     <Container>
       <Slider ref={(slider) => (this.slider = slider)} {...heroSliderSettings}>
@@ -60,6 +42,8 @@ const SlickSlider = () => {
           return <SliderHero cardInfo={cardInfo} key={i} />;
         })}
       </Slider>
+      <br />
+      <br />
       <Slider {...navSliderSettings}>
         {cardsInfo.map((cardInfo, i) => {
           return <SliderCard title={cardInfo.title} number={i} key={i} />;
