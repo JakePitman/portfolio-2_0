@@ -1,0 +1,16 @@
+* {
+  min-height: 0;
+  min-width: 0;
+}
+.slick-center .slider-card {
+  color: white;
+  text-shadow: 0 0 30px white;
+}
+
+a {
+  z-index: 1;
+}
+
+.slick-center a {
+  z-index: 2;
+}
