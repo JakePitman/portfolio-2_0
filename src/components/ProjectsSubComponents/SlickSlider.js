@@ -29,8 +29,8 @@ const SlickSlider = () => {
     slidesToShow: 3,
     centerMode: true,
     slidesToScroll: 1,
-    afterChange: (current) => {
-      this.slider.slickGoTo(current);
+    beforeChange: (current, next) => {
+      this.slider.slickGoTo(next);
     },
     swipeToSlide: true
   };

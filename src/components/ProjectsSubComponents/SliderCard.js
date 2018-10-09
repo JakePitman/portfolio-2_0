@@ -11,6 +11,7 @@ const SliderCard = ({ centered, title, number }) => {
   const Card = styled.div`
     border: 1px solid ${PROJECTS_MAIN_COLOR};
     height: 10vh;
+    cursor: pointer;
   `;
   const Title = styled.h1`
     font-family: ${SUBHEADING_FONT};

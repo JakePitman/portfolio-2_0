@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { SHARE_TECH } from '../../constants/fonts';
-import { SECTION_BACKGROUND } from '../../constants/colors';
+import { SECTION_BACKGROUND, DEAD_GREY } from '../../constants/colors';
 
 const SliderHero = ({ cardInfo }) => {
   //----------------------------STYLING---------------------
@@ -47,6 +47,7 @@ const SliderHero = ({ cardInfo }) => {
     margin: 20px;
     transition: all 0.5s;
     border-radius: 5px;
+    cursor: pointer;
 
     &:hover {
       color: white;
@@ -60,13 +61,31 @@ const SliderHero = ({ cardInfo }) => {
   `;
 
   return (
-    <Container>
+    <Container className="slider-hero">
+      {console.log(cardInfo)}
       <Description>{cardInfo.description}</Description>
       <SubContentContainer>
         <ButtonsContainer>
-          <Button>See it live</Button>
-          <Button>See the design</Button>
-          <Button>See the repo</Button>
+          {cardInfo.isCurrentSite ? (
+            <a href="/">
+              <Button>Home</Button>
+            </a>
+          ) : null}
+          {cardInfo.liveLink ? (
+            <a target="_blank" href={cardInfo.liveLink}>
+              <Button>See it live</Button>
+            </a>
+          ) : null}
+          {cardInfo.designLink ? (
+            <a target="_blank" href={cardInfo.designLink}>
+              <Button>See the design</Button>
+            </a>
+          ) : null}
+          {cardInfo.repoLink ? (
+            <a target="_blank" href={cardInfo.repoLink}>
+              <Button>See the repo</Button>
+            </a>
+          ) : null}
         </ButtonsContainer>
         <Screenshot src={cardInfo.screenshot} />
       </SubContentContainer>
