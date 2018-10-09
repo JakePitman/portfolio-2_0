@@ -16,6 +16,9 @@ const SlickSlider = () => {
   `;
 
   const heroSliderSettings = {
+    swipeToSlide: false,
+    touchMove: false,
+    draggable: false,
     fade: true,
     slidesToShow: 1,
     arrows: false
@@ -54,6 +57,7 @@ const SlickSlider = () => {
   `;
 
   const navSliderSettings = {
+    dots: false,
     arrows: false,
     touchMove: true,
     focusOnSelect: true,
