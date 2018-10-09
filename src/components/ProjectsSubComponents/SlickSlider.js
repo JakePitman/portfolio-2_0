@@ -6,12 +6,13 @@ import SliderCard from './SliderCard';
 import SliderHero from './SliderHero';
 import cardsInfo from './cardsInfo';
 
+import { PHONE_BREAKPOINT } from '../../constants/media-queries';
+
 const SlickSlider = () => {
   //-------------------------STYLING------------------
 
   const Container = styled.div`
     width: 80%;
-    border: 1px solid green;
   `;
 
   const heroSliderSettings = {
@@ -20,7 +21,40 @@ const SlickSlider = () => {
     arrows: false
   };
 
+  const NavSliderContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  `;
+
+  const LeftButton = styled.button`
+    border: 5px solid white;
+    width: 100px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px 0 0 5px;
+
+    @media (max-width: ${PHONE_BREAKPOINT}) {
+      display: none;
+    }
+  `;
+
+  const RightButton = styled.button`
+    border: 5px solid white;
+    width: 100px;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+
+    @media (max-width: ${PHONE_BREAKPOINT}) {
+      display: none;
+    }
+  `;
+
   const navSliderSettings = {
+    arrows: false,
     touchMove: true,
     focusOnSelect: true,
     dots: true,
@@ -44,11 +78,22 @@ const SlickSlider = () => {
       </Slider>
       <br />
       <br />
-      <Slider {...navSliderSettings}>
-        {cardsInfo.map((cardInfo, i) => {
-          return <SliderCard title={cardInfo.title} number={i} key={i} />;
-        })}
-      </Slider>
+      <NavSliderContainer>
+        <LeftButton onClick={() => this.navSlider.slickPrev()}>
+          &#60;
+        </LeftButton>
+        <Slider
+          ref={(navSlider) => (this.navSlider = navSlider)}
+          {...navSliderSettings}
+        >
+          {cardsInfo.map((cardInfo, i) => {
+            return <SliderCard title={cardInfo.title} number={i} key={i} />;
+          })}
+        </Slider>
+        <RightButton onClick={() => this.navSlider.slickNext()}>
+          &#62;
+        </RightButton>
+      </NavSliderContainer>
     </Container>
   );
 };

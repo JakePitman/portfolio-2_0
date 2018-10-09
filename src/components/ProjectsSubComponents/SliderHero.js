@@ -30,7 +30,6 @@ const SliderHero = ({ cardInfo }) => {
   const SubContentContainer = styled.div`
     display: flex;
     justify-content: space-around;
-    border: 3px solid yellow;
     height: 55vh;
     padding: 5px;
 

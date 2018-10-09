@@ -22,8 +22,8 @@ export default [
   {
     title: 'Artistree',
     description:
-      "My first Rails application, and the final assessment of term 2 at Coder Academy. 'Artistree' is a two-sided marketplace that allows users to create a porfolio of their own art, or get in touch with other artists to commission work from them.",
-    liveLink: 'https://sleepy-bayou-35902.herokuapp.com/pages/home',
+      "My first Rails application, and the final assessment of term 2 at Coder Academy. 'Artistree' is a two-sided marketplace that allows users to create a porfolio of their own art and/or commision work from other artists. My image storage trial has expired, so any user images are unfortunately gone, but the rest of the site still works fine!",
+    liveLink: 'https://sleepy-bayou-35902.herokuapp.com/',
     designLink: 'https://www.figma.com/file/PGyq9MdjaHLUe2MV9QSwUmFg/Artistree',
     repoLink: 'https://github.com/JakePitman/artistree-extended',
     screenshot: require('../../assets/img/artistree.png')
