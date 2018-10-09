@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { SHARE_TECH } from '../../constants/fonts';
 import { SECTION_BACKGROUND, DEAD_GREY } from '../../constants/colors';
+import { PHONE_BREAKPOINT } from '../../constants/media-queries';
 
 const SliderHero = ({ cardInfo }) => {
   //----------------------------STYLING---------------------
@@ -20,6 +21,10 @@ const SliderHero = ({ cardInfo }) => {
     text-align: center;
     height: 15vh;
     padding: 10px;
+
+    @media (max-width: ${PHONE_BREAKPOINT}) {
+      font-size: 15px;
+    }
   `;
 
   const SubContentContainer = styled.div`
@@ -28,6 +33,11 @@ const SliderHero = ({ cardInfo }) => {
     border: 3px solid yellow;
     height: 55vh;
     padding: 5px;
+
+    @media (max-width: ${PHONE_BREAKPOINT}) {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
   `;
 
   const ButtonsContainer = styled.div`
@@ -35,6 +45,10 @@ const SliderHero = ({ cardInfo }) => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: ${PHONE_BREAKPOINT}) {
+      flex-direction: row;
+    }
   `;
 
   const Button = styled.button`
@@ -44,47 +58,65 @@ const SliderHero = ({ cardInfo }) => {
     font-family: ${SHARE_TECH};
     border: 1px solid ${SECTION_BACKGROUND};
     padding: 20px 0;
-    margin: 20px;
     transition: all 0.5s;
     border-radius: 5px;
     cursor: pointer;
+    background: white;
 
     &:hover {
       color: white;
       background: ${SECTION_BACKGROUND};
+    }
+
+    @media (max-width: ${PHONE_BREAKPOINT}) {
+      width: 20vw;
+      padding: 10px 0;
+      font-size: 10px;
+    }
+  `;
+
+  const Link = styled.a`
+    margin: 20px;
+
+    @media (max-width: ${PHONE_BREAKPOINT}) {
+      margin: 10px;
     }
   `;
 
   const Screenshot = styled.img`
     max-height: 55vh;
     max-width: 40%;
+
+    @media (max-width: ${PHONE_BREAKPOINT}) {
+      max-height: 40vh;
+      max-width: 50%;
+    }
   `;
 
   return (
     <Container className="slider-hero">
-      {console.log(cardInfo)}
       <Description>{cardInfo.description}</Description>
       <SubContentContainer>
         <ButtonsContainer>
           {cardInfo.isCurrentSite ? (
-            <a href="/">
+            <Link href="/">
               <Button>Home</Button>
-            </a>
+            </Link>
           ) : null}
           {cardInfo.liveLink ? (
-            <a target="_blank" href={cardInfo.liveLink}>
+            <Link target="_blank" href={cardInfo.liveLink}>
               <Button>See it live</Button>
-            </a>
+            </Link>
           ) : null}
           {cardInfo.designLink ? (
-            <a target="_blank" href={cardInfo.designLink}>
+            <Link target="_blank" href={cardInfo.designLink}>
               <Button>See the design</Button>
-            </a>
+            </Link>
           ) : null}
           {cardInfo.repoLink ? (
-            <a target="_blank" href={cardInfo.repoLink}>
+            <Link target="_blank" href={cardInfo.repoLink}>
               <Button>See the repo</Button>
-            </a>
+            </Link>
           ) : null}
         </ButtonsContainer>
         <Screenshot src={cardInfo.screenshot} />

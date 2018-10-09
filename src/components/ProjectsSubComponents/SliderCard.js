@@ -12,6 +12,9 @@ const SliderCard = ({ centered, title, number }) => {
     border: 1px solid ${PROJECTS_MAIN_COLOR};
     height: 10vh;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   `;
   const Title = styled.h1`
     font-family: ${SUBHEADING_FONT};
@@ -19,7 +22,7 @@ const SliderCard = ({ centered, title, number }) => {
     text-align: center;
 
     @media (max-width: ${PHONE_BREAKPOINT}) {
-      font-size: 20px;
+      font-size: 10px;
     }
   `;
 
