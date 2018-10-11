@@ -8,6 +8,7 @@ import { PHONE_BREAKPOINT } from '../../constants/media-queries';
 const SliderHero = ({ cardInfo }) => {
   //----------------------------STYLING---------------------
   const Container = styled.div`
+    overflow: hidden;
     background: white;
     border-radius: 5px;
     height: 80vh;

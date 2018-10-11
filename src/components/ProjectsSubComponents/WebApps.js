@@ -13,9 +13,11 @@ const SlickSlider = () => {
 
   const Container = styled.div`
     width: 80%;
+    margin-bottom: 20px;
   `;
 
   const heroSliderSettings = {
+    dots: false,
     swipeToSlide: false,
     touchMove: false,
     draggable: false,
@@ -61,7 +63,6 @@ const SlickSlider = () => {
     arrows: false,
     touchMove: true,
     focusOnSelect: true,
-    dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
