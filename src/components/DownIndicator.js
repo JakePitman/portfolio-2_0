@@ -25,11 +25,11 @@ const DownCharacter = styled.p`
   margin: 0;
 `;
 
-//---------------------COMPONENT---------------------
-
 const mapStateToProps = (state) => {
   return { currentSection: state.section.currentSection };
 };
+
+//---------------------COMPONENT---------------------
 
 const DownIndicator = ({ currentSection }) => {
   const mainColor = getMainColor(currentSection);

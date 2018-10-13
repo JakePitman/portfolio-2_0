@@ -44,37 +44,6 @@ const Output = styled.div`
   justify-content: center;
 `;
 
-//const scanlinesAnimation = keyframes`
-//0% {
-//background: repeating-linear-gradient(
-//0deg,
-//rgba(155,155,155,0.5),
-//rgba(255,255,255,0.2) 1px,
-//rgba(35,75,100,0.2) 2px,
-//rgba(0,0,0,0.2) 3px,
-//rgba(0,0,0,0.6) 4px);
-//}
-//70% {
-//background: repeating-linear-gradient(
-//0deg,
-//rgba(155,155,155,0.5),
-//rgba(195,195,255,0.2) 1px,
-//rgba(35,75,170,0.2) 2px,
-//rgba(0,0,0,0.2) 3px,
-//rgba(0,0,0,0.6) 4px);
-//}
-
-//100% {
-//background: repeating-linear-gradient(
-//0deg,
-//rgba(155,155,155,0.5),
-//rgba(235,235,235,0.2) 1px,
-//rgba(65,105,200,0.2) 2px,
-//rgba(0,0,0,0.2) 3px,
-//rgba(0,0,0,0.6) 4px);
-//}
-//`;
-
 const Scanlines = styled.div`
   background: repeating-linear-gradient(
     0deg,
@@ -92,31 +61,6 @@ const Scanlines = styled.div`
   left: -1rem;
   top: -1rem;
 `;
-
-//const glowAnimation = keyframes`
-//0% { opacity: 0.1; }
-//25% { opacity: 0.4; }
-//50% { opacity: 0.1; }
-//75% { opacity: 0.4; }
-//100% { opacity: 0.1; }
-//`;
-//const Glow = styled.div`
-//animation: ${glowAnimation} 20s infinite;
-//background: radial-gradient(
-//circle at center,
-//rgba(120, 120, 210, 0.8) 0%,
-//rgba(90, 90, 150, 0.68) 58%,
-//rgba(90, 90, 140, 0.47) 80%,
-//rgba(200, 200, 255, 0.27) 93%,
-//rgba(100, 100, 155, 0) 100%
-//);
-//opacity: 0.15;
-//position: absolute;
-//width: 100%;
-//height: 100%;
-//top: 0;
-//left: 0;
-//`;
 
 const nameShadowAnimation = keyframes`
   0% { text-shadow: -3px 0.1rem 1rem #004F68 }
@@ -162,10 +106,10 @@ const SectionTextList = styled.ul`
 //----------------------COMPONENT--------------------------
 
 const mapStateToProps = (state) => {
-  return { currentSection: state.currentSection };
+  return { currentSection: state.section.currentSection };
 };
 
-const ConnectedTvBox = ({ currentSection }) => {
+const TvBox = ({ currentSection }) => {
   const SectionText = styled.li`
     color: white;
     font-family: ${SUBHEADING_FONT};
@@ -227,6 +171,6 @@ const ConnectedTvBox = ({ currentSection }) => {
   );
 };
 
-const TvBox = connect(mapStateToProps)(ConnectedTvBox);
+const ConnectedTvBox = connect(mapStateToProps)(TvBox);
 
-export default TvBox;
+export default ConnectedTvBox;
