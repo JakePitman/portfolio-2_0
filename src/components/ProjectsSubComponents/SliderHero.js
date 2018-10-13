@@ -83,7 +83,7 @@ const Link = styled.a`
 `;
 
 const Screenshot = styled.img`
-  max-height: 55vh;
+  max-height: 50vh;
   max-width: 40%;
 
   @media (max-width: ${PHONE_BREAKPOINT}) {
