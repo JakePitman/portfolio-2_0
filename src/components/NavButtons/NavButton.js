@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
-import { changeCurrentSection } from '../../redux/actions/index.js';
 
-import getMainColor from '../../utilities/get-main-color';
 import { DEAD_GREY } from '../../constants/colors';
 import { TOP_SECTION_FONT } from '../../constants/fonts';
 import { PHONE_BREAKPOINT } from '../../constants/media-queries';
@@ -32,44 +29,20 @@ const Button = styled.button`
 
 //--------------------COMPONENT-----------------------
 
-const mapStateToProps = (state) => {
-  return { currentSection: state.currentSection };
-};
-
-const mapDispatchToProps = (dispatch) => {
-  return {
-    changeCurrentSection: (newSection) =>
-      dispatch(changeCurrentSection(newSection))
-  };
-};
-
-const ConnectedNavButton = (props) => {
-  const handleClick = (e) => {
-    e.preventDefault();
-    props.changeCurrentSection(props.buttonType);
-  };
-
-  const mainColor = getMainColor(props.buttonType);
-  return (
-    <Button
-      style={
-        props.currentSection === props.buttonType
-          ? {
-              color: 'white',
-              textShadow: `0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px ${mainColor}, 0 0 35px ${mainColor}, 0 0 40px ${mainColor}, 0 0 50px ${mainColor}, 0 0 75px ${mainColor}`
-            }
-          : null
-      }
-      onClick={handleClick}
-    >
-      {props.children}
-    </Button>
-  );
-};
-
-const NavButton = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ConnectedNavButton);
+const NavButton = ({ isCurrent, handleClick, mainColor, children }) => (
+  <Button
+    style={
+      isCurrent
+        ? {
+            color: 'white',
+            textShadow: `0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px ${mainColor}, 0 0 35px ${mainColor}, 0 0 40px ${mainColor}, 0 0 50px ${mainColor}, 0 0 75px ${mainColor}`
+          }
+        : null
+    }
+    onClick={handleClick}
+  >
+    {children}
+  </Button>
+);
 
 export default NavButton;

@@ -24,7 +24,7 @@ const Container = styled.div`
 //--------------------COMPONENT----------------------
 
 const mapStateToProps = (state) => {
-  return { currentSection: state.currentSection };
+  return { currentSection: state.section.currentSection };
 };
 
 const ConnectedSectionContainer = ({ currentSection }) => {
