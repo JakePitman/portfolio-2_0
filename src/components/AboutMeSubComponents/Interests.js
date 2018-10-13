@@ -55,42 +55,42 @@ const methods = {
   componentWillUnmount
 };
 
-const Interests = ({ mainColor }) => {
-  //-----------------------STYLING-------------------------
+//-----------------------STYLING-------------------------
 
-  const Container = styled.div`
-    display: flex;
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
+  width: 100%;
+  margin-top: 20vh;
+  @media (max-width: ${PHONE_BREAKPOINT}) {
+    height: 90vh;
+  }
+`;
+const InterestsContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: ${PHONE_BREAKPOINT}) {
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
     height: 80vh;
-    width: 100%;
-    margin-top: 20vh;
-    @media (max-width: ${PHONE_BREAKPOINT}) {
-      height: 90vh;
-    }
-  `;
-  const InterestsContainer = styled.div`
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    @media (max-width: ${PHONE_BREAKPOINT}) {
-      flex-direction: column;
-      align-items: center;
-      height: 80vh;
-    }
-  `;
+  }
+`;
 
-  return (
-    <Container>
-      <SubHeading mainColor={mainColor}>Interests</SubHeading>;
-      <InterestsContainer id="interests-container">
-        <Interest icon="code" text="Code" />
-        <Interest icon="yin-yang" text="Tai Chi" />
-        <Interest icon="language" text="Japanese" />
-        <Interest icon="gamepad" text="Games" />
-      </InterestsContainer>
-    </Container>
-  );
-};
+//-----------------------COMPONENT-------------------------
+
+const Interests = ({ mainColor }) => (
+  <Container>
+    <SubHeading mainColor={mainColor}>Interests</SubHeading>;
+    <InterestsContainer id="interests-container">
+      <Interest icon="code" text="Code" />
+      <Interest icon="yin-yang" text="Tai Chi" />
+      <Interest icon="language" text="Japanese" />
+      <Interest icon="gamepad" text="Games" />
+    </InterestsContainer>
+  </Container>
+);
 
 export default lifecycle(methods)(Interests);

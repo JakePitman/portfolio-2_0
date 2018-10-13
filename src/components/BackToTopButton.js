@@ -18,17 +18,12 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-const ConnectedBackToTopButton = ({
-  mainColor,
-  changeCurrentSection,
-  buttonType
-}) => {
-  const Container = styled.div`
-    height: 50vh;
-    display: flex;
-    align-items: center;
-  `;
-  const Button = styled.h2`
+const Container = styled.div`
+  height: 50vh;
+  display: flex;
+  align-items: center;
+`;
+const Button = styled.h2`
     cursor: pointer;
     color: ${DEAD_GREY}
     box-shadow: 0 0 5px ${DEAD_GREY};
@@ -40,18 +35,22 @@ const ConnectedBackToTopButton = ({
     transition: all 0.5s;
     &:hover {
       color: white;
-      text-shadow: 0 0 2.5px ${mainColor}, 0 0 5px ${mainColor},
+      text-shadow: ${({
+        mainColor
+      }) => `0 0 2.5px ${mainColor}, 0 0 5px ${mainColor},
         0 0 7.5px ${mainColor}, 0 0 10px ${mainColor}, 0 0 17.5px ${mainColor},
-        0 0 20px ${mainColor}, 0 0 25px ${mainColor}, 0 0 37.5px ${mainColor};
-      box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.7),
+        0 0 20px ${mainColor}, 0 0 25px ${mainColor}, 0 0 37.5px ${mainColor};`}
+      box-shadow: ${({
+        mainColor
+      }) => `0px 0px 0px 2px rgba(255, 255, 255, 0.7),
         0px 0px 0px 5px ${mainColor}, 0px 0px 0px 3px ${mainColor} inset,
-        0px 0px 60px ${mainColor}, 0px 0px 60px ${mainColor} inset;
-    }
+        0px 0px 60px ${mainColor}, 0px 0px 60px ${mainColor} inset;`}}
   @media (max-width: ${PHONE_BREAKPOINT}) {
     font-size: 20px;
   }
   `;
 
+const BackToTopButton = ({ mainColor, changeCurrentSection, buttonType }) => {
   const handleClick = (e) => {
     e.preventDefault();
     changeCurrentSection(buttonType);
@@ -59,14 +58,16 @@ const ConnectedBackToTopButton = ({
 
   return (
     <Container>
-      <Button onClick={handleClick}>Back to top</Button>
+      <Button mainColor={mainColor} onClick={handleClick}>
+        Back to top
+      </Button>
     </Container>
   );
 };
 
-const BackToTopButton = connect(
+const ConnectedBackToTopButton = connect(
   mapStateToProps,
   mapDispatchToProps
-)(ConnectedBackToTopButton);
+)(BackToTopButton);
 
-export default BackToTopButton;
+export default ConnectedBackToTopButton;

@@ -25,13 +25,13 @@ const DownCharacter = styled.p`
   margin: 0;
 `;
 
-//---------------------COMPONENT---------------------
-
 const mapStateToProps = (state) => {
-  return { currentSection: state.currentSection };
+  return { currentSection: state.section.currentSection };
 };
 
-const ConnectedDownIndicator = ({ currentSection }) => {
+//---------------------COMPONENT---------------------
+
+const DownIndicator = ({ currentSection }) => {
   const mainColor = getMainColor(currentSection);
 
   return (
@@ -52,6 +52,6 @@ const ConnectedDownIndicator = ({ currentSection }) => {
   );
 };
 
-const DownIndicator = connect(mapStateToProps)(ConnectedDownIndicator);
+const ConnectedDownIndicator = connect(mapStateToProps)(DownIndicator);
 
-export default DownIndicator;
+export default ConnectedDownIndicator;
